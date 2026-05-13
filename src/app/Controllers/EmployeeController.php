@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\EmployeeModel;
 
-class EmployeController extends BaseController
+class EmployeeController extends BaseController
 {
     public function index()
     {
