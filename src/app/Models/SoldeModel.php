@@ -6,29 +6,29 @@ use CodeIgniter\Model;
 
 class SoldeModel extends Model
 {
-    protected $table            = 'soldes';
-    protected $primaryKey       = 'id';
+    protected $table = 'soldes';
+    protected $primaryKey = 'id';
     protected $useAutoIncrement = true;
-    protected $returnType       = 'array';
+    protected $returnType = 'array';
 
     protected $allowedFields = [
-        'employe_id', 
-        'type_conge_id', 
-        'annee', 
-        'jours_attribues', 
+        'employe_id',
+        'type_conge_id',
+        'annee',
+        'jours_attribues',
         'jours_pris'
     ];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    protected $createdField = 'created_at';
+    protected $updatedField = 'updated_at';
 
     protected $validationRules = [
-        'employe_id'    => 'required|integer',
+        'employe_id' => 'required|integer',
         'type_conge_id' => 'required|integer',
-        'annee'         => 'required|exact_length[4]|numeric',
-        'jours_attribues'=> 'required|integer|greater_than_equal_to[0]',
-        'jours_pris'    => 'required|integer|greater_than_equal_to[0]'
+        'annee' => 'required|exact_length[4]|numeric',
+        'jours_attribues' => 'required|integer|greater_than_equal_to[0]',
+        'jours_pris' => 'required|integer|greater_than_equal_to[0]'
     ];
 
     /**
@@ -37,8 +37,8 @@ class SoldeModel extends Model
     public function getByEmployeeAndYear(int $employeId, int $annee)
     {
         return $this->where('employe_id', $employeId)
-                    ->where('annee', $annee)
-                    ->findAll();
+            ->where('annee', $annee)
+            ->findAll();
     }
 
     /**
@@ -47,10 +47,10 @@ class SoldeModel extends Model
     public function updateJoursPris(int $employeId, int $typeCongeId, int $annee, int $jours)
     {
         return $this->where('employe_id', $employeId)
-                    ->where('type_conge_id', $typeCongeId)
-                    ->where('annee', $annee)
-                    ->set('jours_pris', "jours_pris + {$jours}", false)
-                    ->update();
+            ->where('type_conge_id', $typeCongeId)
+            ->where('annee', $annee)
+            ->set('jours_pris', "jours_pris + {$jours}", false)
+            ->update();
     }
 
     /**
@@ -59,9 +59,23 @@ class SoldeModel extends Model
     public function rollbackJoursPris(int $employeId, int $typeCongeId, int $annee, int $jours)
     {
         return $this->where('employe_id', $employeId)
-                    ->where('type_conge_id', $typeCongeId)
-                    ->where('annee', $annee)
-                    ->set('jours_pris', "jours_pris - {$jours}", false)
-                    ->update();
+            ->where('type_conge_id', $typeCongeId)
+            ->where('annee', $annee)
+            ->set('jours_pris', "jours_pris - {$jours}", false)
+            ->update();
+    }
+
+    public function getRemainingDays($employeId, $typeId, $annee)
+    {
+        $row = $this->where([
+            'employe_id' => $employeId,
+            'type_conge_id' => $typeId,
+            'annee' => $annee
+        ])->first();
+
+        if (!$row)
+            return 0;
+
+        return $row['jours_attribues'] - $row['jours_pris'];
     }
 }

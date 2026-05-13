@@ -61,4 +61,8 @@ class EmployeeModel extends Model
                     ->where('employees.actif', 1)
                     ->findAll();
     }
+    public function getByRole(string $role)
+{
+    return $this->where('role', $role)->findAll();
+}
 }
