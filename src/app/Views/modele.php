@@ -294,14 +294,15 @@ code,pre,.mono{font-family:'DM Mono',monospace}
       Identifiants incorrects. Veuillez réessayer.
     </div>
 
-    <form>
+    <form action="<?= site_url('login') ?>" method="post">
+      <?= csrf_field() ?>
       <div class="f-group">
         <label class="f-label">Adresse email</label>
-        <input type="email" class="f-input" placeholder="vous@techmada.mg" value="employe@techmada.mg"/>
+        <input type="email" name="email" class="f-input" placeholder="vous@techmada.mg" value="employe@techmada.mg"/>
       </div>
       <div class="f-group">
         <label class="f-label">Mot de passe</label>
-        <input type="password" class="f-input" placeholder="••••••••" value="emp123"/>
+        <input type="password" name="password" class="f-input" placeholder="••••••••" value="emp123"/>
       </div>
       <button type="submit" class="btn-primary" style="margin-top:.5rem">
         Se connecter <i class="bi bi-arrow-right-short"></i>
@@ -328,15 +329,15 @@ code,pre,.mono{font-family:'DM Mono',monospace}
     </div>
     <div class="sidebar-section">Menu</div>
     <ul class="sidebar-nav">
-      <li><a href="#page-dashboard-employe" class="active"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
-      <li><a href="#page-form-conge"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
+      <li><a href="<?= site_url('employee/dashboard') ?>" class="active"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
+      <li><a href="<?= site_url('employee/conges/create') ?>"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
       <li>
-        <a href="#page-mes-conges">
+        <a href="<?= site_url('employee/conges') ?>">
           <i class="bi bi-calendar3"></i> Mes demandes
           <span class="nav-badge alert">2</span>
         </a>
       </li>
-      <li><a href="#page-profil-employe"><i class="bi bi-person"></i> Mon profil</a></li>
+      <li><a href="<?= site_url('employee/profil') ?>"><i class="bi bi-person"></i> Mon profil</a></li>
     </ul>
     <div class="sidebar-user">
       <div class="s-user-row">
@@ -345,7 +346,7 @@ code,pre,.mono{font-family:'DM Mono',monospace}
           <div class="user-name">Soa Rakoto</div>
           <div class="user-role">Employé · IT</div>
         </div>
-        <a href="#page-login" style="margin-left:auto;color:rgba(255,255,255,.25);font-size:1.1rem" title="Déconnexion"><i class="bi bi-box-arrow-right"></i></a>
+        <a href="<?= site_url('logout') ?>" style="margin-left:auto;color:rgba(255,255,255,.25);font-size:1.1rem" title="Déconnexion"><i class="bi bi-box-arrow-right"></i></a>
       </div>
     </div>
   </aside>
@@ -357,7 +358,7 @@ code,pre,.mono{font-family:'DM Mono',monospace}
         <div class="topbar-breadcrumb">Accueil</div>
       </div>
       <div class="topbar-actions">
-        <a href="#page-form-conge" class="btn-forest" style="padding:7px 14px;font-size:.82rem">
+        <a href="<?= site_url('employee/conges/create') ?>" class="btn-forest" style="padding:7px 14px;font-size:.82rem">
           <i class="bi bi-plus-lg"></i> Nouvelle demande
         </a>
       </div>
@@ -431,7 +432,7 @@ code,pre,.mono{font-family:'DM Mono',monospace}
       <div class="data-card">
         <div class="data-card-head">
           <h3>Mes dernières demandes</h3>
-          <a href="#page-mes-conges" style="font-size:.8rem;color:var(--forest);text-decoration:none">Voir tout →</a>
+          <a href="<?= site_url('employee/conges') ?>" style="font-size:.8rem;color:var(--forest);text-decoration:none">Voir tout →</a>
         </div>
         <table class="tbl">
           <thead>
@@ -486,10 +487,10 @@ code,pre,.mono{font-family:'DM Mono',monospace}
       <div class="sidebar-brand-name">TechMada RH<span>Espace employé</span></div>
     </div>
     <ul class="sidebar-nav" style="margin-top:1rem">
-      <li><a href="#page-dashboard-employe"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
-      <li><a href="#page-form-conge" class="active"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
-      <li><a href="#page-mes-conges"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
-      <li><a href="#page-profil-employe"><i class="bi bi-person"></i> Mon profil</a></li>
+      <li><a href="<?= site_url('employee/dashboard') ?>"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
+      <li><a href="<?= site_url('employee/conges/create') ?>" class="active"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
+      <li><a href="<?= site_url('employee/conges') ?>"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
+      <li><a href="<?= site_url('employee/profil') ?>"><i class="bi bi-person"></i> Mon profil</a></li>
     </ul>
     <div class="sidebar-user">
       <div class="s-user-row">
@@ -504,7 +505,7 @@ code,pre,.mono{font-family:'DM Mono',monospace}
       <div>
         <div class="topbar-title">Nouvelle demande de congé</div>
         <div class="topbar-breadcrumb">
-          <a href="#page-dashboard-employe">Accueil</a>
+          <a href="<?= site_url('employee/dashboard') ?>">Accueil</a>
           <i class="bi bi-chevron-right" style="font-size:.6rem"></i> Nouvelle demande
         </div>
       </div>
@@ -557,7 +558,7 @@ code,pre,.mono{font-family:'DM Mono',monospace}
 
             <div class="form-actions">
               <button class="btn-forest" type="submit"><i class="bi bi-send"></i> Soumettre la demande</button>
-              <a href="#page-dashboard-employe" class="btn-secondary"><i class="bi bi-x"></i> Annuler</a>
+              <a href="<?= site_url('employee/dashboard') ?>" class="btn-secondary"><i class="bi bi-x"></i> Annuler</a>
             </div>
           </div>
         </div>
@@ -625,10 +626,10 @@ code,pre,.mono{font-family:'DM Mono',monospace}
       <div class="sidebar-brand-name">TechMada RH<span>Espace employé</span></div>
     </div>
     <ul class="sidebar-nav" style="margin-top:1rem">
-      <li><a href="#page-dashboard-employe"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
-      <li><a href="#page-form-conge"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
-      <li><a href="#page-mes-conges" class="active"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
-      <li><a href="#page-profil-employe"><i class="bi bi-person"></i> Mon profil</a></li>
+      <li><a href="<?= site_url('employee/dashboard') ?>"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
+      <li><a href="<?= site_url('employee/conges/create') ?>"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
+      <li><a href="<?= site_url('employee/conges') ?>" class="active"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
+      <li><a href="<?= site_url('employee/profil') ?>"><i class="bi bi-person"></i> Mon profil</a></li>
     </ul>
     <div class="sidebar-user">
       <div class="s-user-row">
@@ -642,10 +643,10 @@ code,pre,.mono{font-family:'DM Mono',monospace}
     <div class="topbar">
       <div>
         <div class="topbar-title">Mes demandes de congé</div>
-        <div class="topbar-breadcrumb"><a href="#page-dashboard-employe">Accueil</a> <i class="bi bi-chevron-right" style="font-size:.6rem"></i> Mes demandes</div>
+        <div class="topbar-breadcrumb"><a href="<?= site_url('employee/dashboard') ?>">Accueil</a> <i class="bi bi-chevron-right" style="font-size:.6rem"></i> Mes demandes</div>
       </div>
       <div class="topbar-actions">
-        <a href="#page-form-conge" class="btn-forest" style="padding:7px 14px;font-size:.82rem"><i class="bi bi-plus-lg"></i> Nouvelle demande</a>
+        <a href="<?= site_url('employee/conges/create') ?>" class="btn-forest" style="padding:7px 14px;font-size:.82rem"><i class="bi bi-plus-lg"></i> Nouvelle demande</a>
       </div>
     </div>
 

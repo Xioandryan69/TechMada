@@ -10,6 +10,17 @@
 </head>
 <body>
     <section id="page-dashboard-employe" style="margin-top:3rem">
+<?php
+$conges = $conges ?? [];
+$soldes = $soldes ?? [];
+$pendingConges = array_values(array_filter($conges, static fn ($conge) => ($conge['statut'] ?? '') === 'en_attente'));
+$approvedConges = array_values(array_filter($conges, static fn ($conge) => ($conge['statut'] ?? '') === 'valide'));
+$refusedConges = array_values(array_filter($conges, static fn ($conge) => ($conge['statut'] ?? '') === 'refuse'));
+$latestConges = array_slice($conges, 0, 3);
+$totalAttribue = array_sum(array_map(static fn ($solde) => (int) ($solde['jours_attribues'] ?? 0), $soldes));
+$totalPris = array_sum(array_map(static fn ($solde) => (int) ($solde['jours_pris'] ?? 0), $soldes));
+$totalRestant = max(0, $totalAttribue - $totalPris);
+?>
 <div class="app-wrap">
 
   <!-- SIDEBAR EMPLOYÉ -->
@@ -20,15 +31,15 @@
     </div>
     <div class="sidebar-section">Menu</div>
     <ul class="sidebar-nav">
-      <li><a href="#page-dashboard-employe" class="active"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
-      <li><a href="#page-form-conge"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
+      <li><a href="<?= site_url('employee/dashboard') ?>" class="active"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
+      <li><a href="<?= site_url('employee/conges/create') ?>"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
       <li>
-        <a href="#page-mes-conges">
+        <a href="<?= site_url('employee/conges') ?>">
           <i class="bi bi-calendar3"></i> Mes demandes
-          <span class="nav-badge alert">2</span>
+          <span class="nav-badge alert"><?= count($pendingConges) ?></span>
         </a>
       </li>
-      <li><a href="#page-profil-employe"><i class="bi bi-person"></i> Mon profil</a></li>
+      <li><a href="<?= site_url('employee/profil') ?>"><i class="bi bi-person"></i> Mon profil</a></li>
     </ul>
     <div class="sidebar-user">
       <div class="s-user-row">
@@ -37,7 +48,7 @@
           <div class="user-name">Soa Rakoto</div>
           <div class="user-role">Employé · IT</div>
         </div>
-        <a href="#page-login" style="margin-left:auto;color:rgba(255,255,255,.25);font-size:1.1rem" title="Déconnexion"><i class="bi bi-box-arrow-right"></i></a>
+        <a href="<?= site_url('logout') ?>" style="margin-left:auto;color:rgba(255,255,255,.25);font-size:1.1rem" title="Déconnexion"><i class="bi bi-box-arrow-right"></i></a>
       </div>
     </div>
   </aside>
@@ -49,7 +60,7 @@
         <div class="topbar-breadcrumb">Accueil</div>
       </div>
       <div class="topbar-actions">
-        <a href="#page-form-conge" class="btn-forest" style="padding:7px 14px;font-size:.82rem">
+        <a href="<?= site_url('employee/conges/create') ?>" class="btn-forest" style="padding:7px 14px;font-size:.82rem">
           <i class="bi bi-plus-lg"></i> Nouvelle demande
         </a>
       </div>
@@ -57,65 +68,65 @@
 
     <div class="content">
 
-      <!-- Flash succès -->
+      <?php if ($successMessage = session()->getFlashdata('success')): ?>
       <div class="flash flash-success">
         <i class="bi bi-check-circle-fill"></i>
-        Votre demande de congé a bien été soumise. Elle est en attente de validation.
+        <?= esc($successMessage) ?>
       </div>
+      <?php endif; ?>
 
       <!-- Métriques -->
       <div class="metrics">
         <div class="metric">
           <div class="metric-top"><div class="metric-icon mi-amber"><i class="bi bi-hourglass-split"></i></div></div>
-          <div class="metric-val">2</div>
+          <div class="metric-val"><?= count($pendingConges) ?></div>
           <div class="metric-label">En attente</div>
         </div>
         <div class="metric">
           <div class="metric-top"><div class="metric-icon mi-green"><i class="bi bi-check-circle"></i></div></div>
-          <div class="metric-val">5</div>
+          <div class="metric-val"><?= count($approvedConges) ?></div>
           <div class="metric-label">Approuvées</div>
         </div>
         <div class="metric">
           <div class="metric-top"><div class="metric-icon mi-forest"><i class="bi bi-calendar-check"></i></div></div>
-          <div class="metric-val">18</div>
+          <div class="metric-val"><?= $totalRestant ?></div>
           <div class="metric-label">Jours restants</div>
-          <div class="metric-sub">sur 30 cette année</div>
+          <div class="metric-sub">sur <?= $totalAttribue ?> attribués</div>
         </div>
         <div class="metric">
           <div class="metric-top"><div class="metric-icon mi-red"><i class="bi bi-x-circle"></i></div></div>
-          <div class="metric-val">1</div>
+          <div class="metric-val"><?= count($refusedConges) ?></div>
           <div class="metric-label">Refusée</div>
         </div>
       </div>
 
       <!-- Soldes de congés -->
       <div class="data-card">
-        <div class="data-card-head"><h3>Mes soldes de congés — 2025</h3></div>
+        <div class="data-card-head"><h3>Mes soldes de congés — <?= date('Y') ?></h3></div>
         <div style="padding:1rem 1.25rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem">
-          <div class="solde-card" style="margin:0">
-            <div class="solde-header">
-              <span class="solde-type">Congé annuel</span>
-              <span class="solde-nums"><strong>18</strong> / 30 j</span>
+          <?php foreach ($soldes as $solde): ?>
+            <?php
+              $attribues = (int) ($solde['jours_attribues'] ?? 0);
+              $pris = (int) ($solde['jours_pris'] ?? 0);
+              $restants = max(0, $attribues - $pris);
+              $taux = $attribues > 0 ? (int) round(($restants / $attribues) * 100) : 0;
+              $barClass = $taux <= 20 ? 'warn' : '';
+            ?>
+            <div class="solde-card" style="margin:0">
+              <div class="solde-header">
+                <span class="solde-type"><?= esc($solde['type_nom'] ?? 'Congé') ?></span>
+                <span class="solde-nums"><strong><?= $restants ?></strong> / <?= $attribues ?> j</span>
+              </div>
+              <div class="solde-bar"><div class="solde-fill <?= $barClass ?>" style="width:<?= $taux ?>%"></div></div>
+              <div class="solde-label"><?= $restants ?> jours restants · <?= $pris ?> pris</div>
             </div>
-            <div class="solde-bar"><div class="solde-fill" style="width:60%"></div></div>
-            <div class="solde-label">18 jours restants · 12 pris</div>
-          </div>
-          <div class="solde-card" style="margin:0">
-            <div class="solde-header">
-              <span class="solde-type">Congé maladie</span>
-              <span class="solde-nums"><strong>8</strong> / 10 j</span>
+          <?php endforeach; ?>
+          <?php if (empty($soldes)): ?>
+            <div class="empty" style="grid-column:1/-1">
+              <i class="bi bi-inbox"></i>
+              <p>Aucun solde trouvé pour cette année.</p>
             </div>
-            <div class="solde-bar"><div class="solde-fill" style="width:80%"></div></div>
-            <div class="solde-label">8 jours restants · 2 pris</div>
-          </div>
-          <div class="solde-card" style="margin:0">
-            <div class="solde-header">
-              <span class="solde-type">Congé spécial</span>
-              <span class="solde-nums"><strong>1</strong> / 5 j</span>
-            </div>
-            <div class="solde-bar"><div class="solde-fill warn" style="width:20%"></div></div>
-            <div class="solde-label">1 jour restant · 4 pris</div>
-          </div>
+          <?php endif; ?>
         </div>
       </div>
 
@@ -123,37 +134,40 @@
       <div class="data-card">
         <div class="data-card-head">
           <h3>Mes dernières demandes</h3>
-          <a href="#page-mes-conges" style="font-size:.8rem;color:var(--forest);text-decoration:none">Voir tout →</a>
+          <a href="<?= site_url('employee/conges') ?>" style="font-size:.8rem;color:var(--forest);text-decoration:none">Voir tout →</a>
         </div>
         <table class="tbl">
           <thead>
             <tr><th>Type</th><th>Du</th><th>Au</th><th>Durée</th><th>Statut</th><th>Action</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td><span class="type-badge t-annuel">Annuel</span></td>
-              <td class="td-muted">16 juin 2025</td>
-              <td class="td-muted">20 juin 2025</td>
-              <td class="td-mono">5 j</td>
-              <td><span class="statut s-attente">en attente</span></td>
-              <td><button class="btn-sm btn-cancel"><i class="bi bi-x"></i> Annuler</button></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-maladie">Maladie</span></td>
-              <td class="td-muted">2 juin 2025</td>
-              <td class="td-muted">3 juin 2025</td>
-              <td class="td-mono">2 j</td>
-              <td><span class="statut s-approuvee">approuvée</span></td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-annuel">Annuel</span></td>
-              <td class="td-muted">12 mai 2025</td>
-              <td class="td-muted">16 mai 2025</td>
-              <td class="td-mono">5 j</td>
-              <td><span class="statut s-approuvee">approuvée</span></td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
+            <?php foreach ($latestConges as $conge): ?>
+              <?php
+                $statut = $conge['statut'] ?? '';
+                $statutLabel = $statut === 'valide' ? 'approuvée' : ($statut === 'refuse' ? 'refusée' : 'en attente');
+                $statusClass = $statut === 'valide' ? 's-approuvee' : ($statut === 'refuse' ? 's-refusee' : 's-attente');
+              ?>
+              <tr>
+                <td><span class="type-badge t-annuel"><?= esc($conge['type_libelle'] ?? 'Congé') ?></span></td>
+                <td class="td-muted"><?= esc($conge['date_debut'] ?? '-') ?></td>
+                <td class="td-muted"><?= esc($conge['date_fin'] ?? '-') ?></td>
+                <td class="td-mono"><?= esc((string) ($conge['nb_jours'] ?? 0)) ?> j</td>
+                <td><span class="statut <?= $statusClass ?>"><?= esc($statutLabel) ?></span></td>
+                <td>
+                  <?php if ($statut === 'en_attente'): ?>
+                    <form action="<?= site_url('employee/conges/' . ($conge['id'] ?? 0) . '/annuler') ?>" method="post" style="display:inline">
+                      <?= csrf_field() ?>
+                      <button class="btn-sm btn-cancel" type="submit"><i class="bi bi-x"></i> Annuler</button>
+                    </form>
+                  <?php else: ?>
+                    <span class="td-muted" style="font-size:.75rem">—</span>
+                  <?php endif; ?>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+            <?php if (empty($latestConges)): ?>
+              <tr><td colspan="6"><div class="empty"><i class="bi bi-inbox"></i><p>Aucune demande enregistrée.</p></div></td></tr>
+            <?php endif; ?>
           </tbody>
         </table>
       </div>

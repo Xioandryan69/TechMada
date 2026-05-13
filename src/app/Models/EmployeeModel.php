@@ -6,14 +6,14 @@ use CodeIgniter\Model;
 
 class EmployeeModel extends Model
 {
-    protected $table            = 'employees';
+    protected $table            = 'employes';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
 
     protected $allowedFields = [
-        'nom', 'prenom', 'email', 'password', 'role', 
+        'nom', 'prenom', 'email', 'password', 'role_id',
         'departement_id', 'date_embauche', 'actif'
     ];
 
@@ -24,9 +24,9 @@ class EmployeeModel extends Model
     protected $validationRules = [
         'nom'            => 'required|min_length[2]|max_length[100]',
         'prenom'         => 'required|min_length[2]|max_length[100]',
-        'email'          => 'required|valid_email|is_unique[employees.email,id,{id}]',
+        'email'          => 'required|valid_email|is_unique[employes.email,id,{id}]',
         'password'       => 'required|min_length[6]',
-        'role'           => 'required|in_list[employe,rh,admin]',
+        'role_id'        => 'required|integer',
         'departement_id' => 'required|integer',
         'date_embauche'  => 'required|valid_date',
         'actif'          => 'required|in_list[0,1]',
@@ -49,20 +49,26 @@ class EmployeeModel extends Model
 
     public function getByEmail(string $email)
     {
-        return $this->where('email', $email)
-                    ->where('actif', 1)
+        return $this->select('employes.*, roles.nom as role')
+                    ->join('roles', 'roles.id = employes.role_id')
+                    ->where('employes.email', $email)
+                    ->where('employes.actif', 1)
                     ->first();
     }
 
     public function getWithDepartment()
     {
-        return $this->select('employees.*, departements.nom as departement_nom')
-                    ->join('departements', 'departements.id = employees.departement_id')
-                    ->where('employees.actif', 1)
+        return $this->select('employes.*, departements.libelle as departement_nom, roles.nom as role')
+                    ->join('departements', 'departements.id = employes.departement_id')
+                    ->join('roles', 'roles.id = employes.role_id')
+                    ->where('employes.actif', 1)
                     ->findAll();
     }
     public function getByRole(string $role)
 {
-    return $this->where('role', $role)->findAll();
+    return $this->select('employes.*, roles.nom as role')
+                ->join('roles', 'roles.id = employes.role_id')
+                ->where('roles.nom', $role)
+                ->findAll();
 }
 }

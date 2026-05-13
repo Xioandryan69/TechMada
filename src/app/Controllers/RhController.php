@@ -3,16 +3,31 @@
 namespace App\Controllers;
 
 use App\Models\CongeModel;
+use App\Models\DepartementModel;
+use App\Models\EmployeeModel;
 use App\Models\SoldeModel;
 
 class RhController extends BaseController
 {
+    public function dashboardAdmin()
+    {
+        $model = new CongeModel();
+
+        return view('dashboardAdmin', [
+            'conges' => $model->getAllWithDetails(),
+            'pendingCount' => count($model->getPendingLeaves()),
+            'employees' => (new EmployeeModel())->getActiveEmployees(),
+            'departements' => (new DepartementModel())->findAll()
+        ]);
+    }
+
     public function demandes()
     {
         $model = new CongeModel();
 
-        return view('rh/demandes', [
-            'conges' => $model->getPendingLeaves()
+        return view('listeRhValidation', [
+            'conges' => $model->getAllWithDetails(),
+            'pendingConges' => $model->getPendingLeaves()
         ]);
     }
 

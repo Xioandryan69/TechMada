@@ -248,3 +248,378 @@ in SYSTEMPATH/Filters/Filters.php on line 402.
  6 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
  7 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
  8 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 09:46:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 09:47:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 09:50:28 --> CSRF token verified.
+ERROR - 2026-05-13 09:50:28 --> Error connecting to the database: ErrorException: Trying to access array offset on null in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php:105
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php(105): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 09:50:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Trying to access array offset on null
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 10:01:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 10:02:14 --> CSRF token verified.
+ERROR - 2026-05-13 10:02:14 --> Error connecting to the database: ErrorException: Trying to access array offset on null in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php:105
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php(105): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:02:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Trying to access array offset on null
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 10:02:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 10:02:43 --> CSRF token verified.
+ERROR - 2026-05-13 10:02:43 --> Error connecting to the database: ErrorException: Trying to access array offset on null in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php:105
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php(105): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:02:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Trying to access array offset on null
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 10:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-05-13 10:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 10:06:55 --> CSRF token verified.
+ERROR - 2026-05-13 10:06:55 --> Error connecting to the database: ErrorException: Trying to access array offset on null in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php:105
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/MySQLi/Connection.php(105): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:06:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Trying to access array offset on null
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 7 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 10:07:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-05-13 10:12:57 --> ErrorException: fwrite(): Write of 47 bytes failed with errno=32 Broken pipe
+[Method: CLI, Route: routes]
+in SYSTEMPATH/CLI/InputOutput.php on line 78.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CLI/InputOutput.php(78): fwrite()
+ 3 SYSTEMPATH/CLI/CLI.php(1126): CodeIgniter\CLI\InputOutput->fwrite()
+ 4 SYSTEMPATH/CLI/CLI.php(465): CodeIgniter\CLI\CLI::fwrite()
+ 5 SYSTEMPATH/Commands/Utilities/Routes.php(211): CodeIgniter\CLI\CLI::write()
+ 6 SYSTEMPATH/Commands/Utilities/Routes.php(196): CodeIgniter\Commands\Utilities\Routes->showRequiredFilters()
+ 7 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Utilities\Routes->run()
+ 8 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run()
+ 9 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand()
+11 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark()
+DEBUG - 2026-05-13 10:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 10:22:46 --> CSRF token verified.
+ERROR - 2026-05-13 10:22:46 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:22:46 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 7 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+DEBUG - 2026-05-13 10:26:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-05-13 10:26:44 --> CSRF token verified.
+ERROR - 2026-05-13 10:26:44 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:26:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 7 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+INFO - 2026-05-13 10:27:18 --> CSRF token verified.
+ERROR - 2026-05-13 10:27:18 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:27:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 7 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+INFO - 2026-05-13 10:27:20 --> CSRF token verified.
+ERROR - 2026-05-13 10:27:20 --> Error connecting to the database: Exception: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:111
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(111): SQLite3->__construct()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#14 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: SQLite3 error: Unable to open database: unable to open database file in /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php:118
+Stack trace:
+#0 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(555): CodeIgniter\Database\SQLite3\Connection->connect()
+#1 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+#3 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+#7 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/app/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+#8 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(951): App\Controllers\AuthController->login()
+#9 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#10 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#11 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#13 /home/andrianandrainy/Documents/S4/Mr Rojo/ETU004367_4144/TechMada/src/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#14 {main}
+CRITICAL - 2026-05-13 10:27:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [SQLite3]: SQLite3 error: Unable to open database: unable to open database file
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/SQLite3/Connection.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\SQLite3\Connection->initialize()
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 4 SYSTEMPATH/Model.php(295): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 6 APPPATH/Models/EmployeeModel.php(56): CodeIgniter\BaseModel->first()
+ 7 APPPATH/Controllers/AuthController.php(21): App\Models\EmployeeModel->getByEmail()
+ 8 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 9 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+10 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+13 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()

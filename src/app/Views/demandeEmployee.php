@@ -10,6 +10,9 @@
 </head>
 <body>
     <section id="page-mes-conges" style="margin-top:3rem">
+<?php
+$conges = $conges ?? [];
+?>
 <div class="app-wrap">
 
   <aside class="sidebar">
@@ -18,10 +21,10 @@
       <div class="sidebar-brand-name">TechMada RH<span>Espace employé</span></div>
     </div>
     <ul class="sidebar-nav" style="margin-top:1rem">
-      <li><a href="#page-dashboard-employe"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
-      <li><a href="#page-form-conge"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
-      <li><a href="#page-mes-conges" class="active"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
-      <li><a href="#page-profil-employe"><i class="bi bi-person"></i> Mon profil</a></li>
+      <li><a href="<?= site_url('employee/dashboard') ?>"><i class="bi bi-grid-1x2"></i> Tableau de bord</a></li>
+      <li><a href="<?= site_url('employee/conges/create') ?>"><i class="bi bi-plus-circle"></i> Nouvelle demande</a></li>
+      <li><a href="<?= site_url('employee/conges') ?>" class="active"><i class="bi bi-calendar3"></i> Mes demandes</a></li>
+      <li><a href="<?= site_url('employee/profil') ?>"><i class="bi bi-person"></i> Mon profil</a></li>
     </ul>
     <div class="sidebar-user">
       <div class="s-user-row">
@@ -35,10 +38,10 @@
     <div class="topbar">
       <div>
         <div class="topbar-title">Mes demandes de congé</div>
-        <div class="topbar-breadcrumb"><a href="#page-dashboard-employe">Accueil</a> <i class="bi bi-chevron-right" style="font-size:.6rem"></i> Mes demandes</div>
+        <div class="topbar-breadcrumb"><a href="<?= site_url('employee/dashboard') ?>">Accueil</a> <i class="bi bi-chevron-right" style="font-size:.6rem"></i> Mes demandes</div>
       </div>
       <div class="topbar-actions">
-        <a href="#page-form-conge" class="btn-forest" style="padding:7px 14px;font-size:.82rem"><i class="bi bi-plus-lg"></i> Nouvelle demande</a>
+        <a href="<?= site_url('employee/conges/create') ?>" class="btn-forest" style="padding:7px 14px;font-size:.82rem"><i class="bi bi-plus-lg"></i> Nouvelle demande</a>
       </div>
     </div>
 
@@ -48,11 +51,10 @@
           <h3>Toutes mes demandes</h3>
           <div style="display:flex;gap:6px">
             <select class="f-select" style="font-size:.8rem;padding:6px 10px;width:auto">
-              <option>Tous les statuts</option>
-              <option>En attente</option>
-              <option>Approuvée</option>
-              <option>Refusée</option>
-              <option>Annulée</option>
+              <option value="">Tous les statuts</option>
+              <option value="en_attente">En attente</option>
+              <option value="valide">Approuvée</option>
+              <option value="refuse">Refusée</option>
             </select>
           </div>
         </div>
@@ -61,51 +63,34 @@
             <tr><th>Type</th><th>Début</th><th>Fin</th><th>Durée</th><th>Statut</th><th>Commentaire RH</th><th>Action</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td><span class="type-badge t-annuel">Annuel</span></td>
-              <td class="td-muted">23 juin 2025</td>
-              <td class="td-muted">27 juin 2025</td>
-              <td class="td-mono">5 j</td>
-              <td><span class="statut s-attente">en attente</span></td>
-              <td class="td-muted" style="font-size:.78rem">—</td>
-              <td><button class="btn-sm btn-cancel"><i class="bi bi-x"></i> Annuler</button></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-maladie">Maladie</span></td>
-              <td class="td-muted">2 juin 2025</td>
-              <td class="td-muted">3 juin 2025</td>
-              <td class="td-mono">2 j</td>
-              <td><span class="statut s-approuvee">approuvée</span></td>
-              <td style="font-size:.78rem;color:var(--success)"><i class="bi bi-check-circle"></i> Validé</td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-annuel">Annuel</span></td>
-              <td class="td-muted">12 mai 2025</td>
-              <td class="td-muted">16 mai 2025</td>
-              <td class="td-mono">5 j</td>
-              <td><span class="statut s-approuvee">approuvée</span></td>
-              <td style="font-size:.78rem;color:var(--success)"><i class="bi bi-check-circle"></i> OK</td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-special">Spécial</span></td>
-              <td class="td-muted">5 avr. 2025</td>
-              <td class="td-muted">5 avr. 2025</td>
-              <td class="td-mono">1 j</td>
-              <td><span class="statut s-refusee">refusée</span></td>
-              <td style="font-size:.78rem;color:var(--danger)">Chevauchement détecté</td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
-            <tr>
-              <td><span class="type-badge t-sans-solde">Sans solde</span></td>
-              <td class="td-muted">10 mars 2025</td>
-              <td class="td-muted">12 mars 2025</td>
-              <td class="td-mono">3 j</td>
-              <td><span class="statut s-annulee">annulée</span></td>
-              <td class="td-muted" style="font-size:.78rem">Annulé par l'employé</td>
-              <td><span class="td-muted" style="font-size:.75rem">—</span></td>
-            </tr>
+            <?php foreach ($conges as $conge): ?>
+              <?php
+                $statut = $conge['statut'] ?? '';
+                $statutLabel = $statut === 'valide' ? 'approuvée' : ($statut === 'refuse' ? 'refusée' : 'en attente');
+                $statusClass = $statut === 'valide' ? 's-approuvee' : ($statut === 'refuse' ? 's-refusee' : 's-attente');
+              ?>
+              <tr>
+                <td><span class="type-badge t-annuel"><?= esc($conge['type_libelle'] ?? 'Congé') ?></span></td>
+                <td class="td-muted"><?= esc($conge['date_debut'] ?? '-') ?></td>
+                <td class="td-muted"><?= esc($conge['date_fin'] ?? '-') ?></td>
+                <td class="td-mono"><?= esc((string) ($conge['nb_jours'] ?? 0)) ?> j</td>
+                <td><span class="statut <?= $statusClass ?>"><?= esc($statutLabel) ?></span></td>
+                <td style="font-size:.78rem;color:<?= $statut === 'refuse' ? 'var(--danger)' : 'var(--muted)' ?>"><?= esc($conge['commentaire_rh'] ?? '—') ?></td>
+                <td>
+                  <?php if ($statut === 'en_attente'): ?>
+                    <form action="<?= site_url('employee/conges/' . ($conge['id'] ?? 0) . '/annuler') ?>" method="post" style="display:inline">
+                      <?= csrf_field() ?>
+                      <button class="btn-sm btn-cancel" type="submit"><i class="bi bi-x"></i> Annuler</button>
+                    </form>
+                  <?php else: ?>
+                    <span class="td-muted" style="font-size:.75rem">—</span>
+                  <?php endif; ?>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+            <?php if (empty($conges)): ?>
+              <tr><td colspan="7"><div class="empty"><i class="bi bi-inbox"></i><p>Aucune demande trouvée.</p></div></td></tr>
+            <?php endif; ?>
           </tbody>
         </table>
       </div>

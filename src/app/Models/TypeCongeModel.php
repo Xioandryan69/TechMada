@@ -6,15 +6,13 @@ use CodeIgniter\Model;
 
 class TypeCongeModel extends Model
 {
-    protected $table            = 'types_conge';
+    protected $table            = 'type_conges';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
 
     protected $allowedFields = [
-        'libelle', 
-        'jours_annuels', 
-        'deductible'
+        'nom'
     ];
 
     protected $useTimestamps = true;
@@ -22,8 +20,6 @@ class TypeCongeModel extends Model
     protected $updatedField  = 'updated_at';
 
     protected $validationRules = [
-        'libelle'      => 'required|min_length[3]|max_length[100]',
-        'jours_annuels'=> 'required|integer|greater_than[0]',
-        'deductible'   => 'required|in_list[0,1]'
+        'nom' => 'required|min_length[3]|max_length[100]'
     ];
 }

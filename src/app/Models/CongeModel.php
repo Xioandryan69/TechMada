@@ -34,7 +34,7 @@ class CongeModel extends Model
         'date_fin' => 'required|valid_date',
         'nb_jours' => 'required|integer|greater_than[0]',
         'motif' => 'required|min_length[10]',
-        'statut' => 'required|in_list[en_attente,approuve,refuse,annule]'
+        'statut' => 'required|in_list[en_attente,valide,refuse]'
     ];
 
     public function getPendingLeaves()
@@ -52,9 +52,9 @@ class CongeModel extends Model
 
     public function getAllWithDetails()
     {
-        return $this->select('conges.*, employees.nom, employees.prenom, types_conge.libelle as type_libelle')
-            ->join('employees', 'employees.id = conges.employe_id')
-            ->join('types_conge', 'types_conge.id = conges.type_conge_id')
+        return $this->select('conges.*, employes.nom as employe_nom, employes.prenom as employe_prenom, type_conges.nom as type_libelle')
+            ->join('employes', 'employes.id = conges.employe_id')
+            ->join('type_conges', 'type_conges.id = conges.type_conge_id')
             ->orderBy('conges.created_at', 'DESC')
             ->findAll();
     }

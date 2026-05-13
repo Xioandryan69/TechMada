@@ -36,8 +36,10 @@ class SoldeModel extends Model
      */
     public function getByEmployeeAndYear(int $employeId, int $annee)
     {
-        return $this->where('employe_id', $employeId)
-            ->where('annee', $annee)
+        return $this->select('soldes.*, type_conges.nom as type_nom')
+            ->join('type_conges', 'type_conges.id = soldes.type_conge_id')
+            ->where('soldes.employe_id', $employeId)
+            ->where('soldes.annee', $annee)
             ->findAll();
     }
 
