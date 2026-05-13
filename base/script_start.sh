@@ -1,4 +1,4 @@
- sqlite3 database.db  < "/base/schema.sql"
+ sqlite3 database.db  < "schema.sql"
 
 # DROP TABLE IF EXISTS conges;
 # DROP TABLE IF EXISTS soldes;

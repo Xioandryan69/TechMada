@@ -1,3 +1,5 @@
+
+--- 
 INSERT INTO roles (nom) VALUES
 ('admin'),
 ('rh'),
@@ -12,6 +14,18 @@ INSERT INTO departements (nom, description, libelle, jours_annuel, deductible) V
 ('informatique', 'Département IT', 'IT', 30, 0),
 ('ressources_humaines', 'Gestion du personnel', 'RH', 25, 0),
 ('finance', 'Gestion financière', 'FIN', 28, 1);
+
+INSERT INTO employes
+(nom, prenom, email, password, role_id, departement_id, date_embauche, actif)
+VALUES
+
+('Rakoto', 'Jean', 'jean@test.com', '1234', 1, 1, '2024-01-01', 1),
+
+('Rabe', 'Paul', 'paul@test.com', '1234', 2, 2, '2024-02-01', 1),
+
+('Rasoa', 'Marie', 'marie@test.com', '1234', 3, 1, '2024-03-01', 1),
+
+('Andry', 'Lucas', 'lucas@test.com', '1234', 3, 3, '2024-04-01', 1);
 
 INSERT INTO soldes (employe_id, type_conge_id, annee, jours_attribues, jours_pris) VALUES
 (1, 1, 2025, 30, 5),
