@@ -13,9 +13,7 @@ use CodeIgniter\Filters\FilterInterface;
     'logged_in' => true
 
 **/
-class AuthFilter implements FilterInterface
-{
-<?php
+
 
 namespace App\Filters;
 
@@ -36,5 +34,4 @@ class AuthFilter implements FilterInterface
     {
         // rien
     }
-}
 }
