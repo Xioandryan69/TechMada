@@ -1,0 +1,129 @@
+========================================
+NOM DU FICHIER : home.php
+========================================
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Régime - Atteignez vos objectifs de santé</title>
+    <!-- Bootstrap CSS -->
+    <link href="<?= base_url('assets/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/fontawesome/css/all.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success" href="#">My Régime</a>
+            <a class="nav-link btn btn-outline-success ms-2" href="<?= base_url('/admin/login') ?>">Administration</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success ms-2" href="<?= base_url('/users/login') ?>">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success ms-2" href="<?= base_url('/users/register') ?>">Inscription</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Transformez votre corps avec My Régime</h1>
+            <p class="lead mb-4">Des programmes personnalisés d'alimentation et de sport pour atteindre votre poids idéal.</p>
+            <a href="#" class="btn btn-success btn-lg px-5 py-3">Commencer votre transformation</a>
+        </div>
+    </section>
+
+    <!-- Objectifs Section -->
+    <section id="objectifs" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Choisissez votre objectif</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="fas fa-arrow-down feature-icon"></i>
+                            <h4 class="card-title">Perdre du poids</h4>
+                            <p class="card-text">Des régimes adaptés pour brûler les graisses et affiner votre silhouette de manière saine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="fas fa-arrow-up feature-icon"></i>
+                            <h4 class="card-title">Prendre du poids</h4>
+                            <p class="card-text">Des programmes nutritionnels pour gagner en masse musculaire et en vitalité.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 text-center p-4 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="fas fa-balance-scale feature-icon"></i>
+                            <h4 class="card-title">Atteindre l'IMC idéal</h4>
+                            <p class="card-text">Trouvez votre équilibre parfait avec un suivi personnalisé de votre Indice de Masse Corporelle.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comment ça marche Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Comment ça marche ?</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <ul class="list-group list-group-flush shadow-sm">
+                        <li class="list-group-item p-4">
+                            <h5>1. Inscription simple et sécurisée</h5>
+                            <p class="mb-0 text-muted">Renseignez vos informations personnelles puis vos données de santé (taille, poids) en deux étapes faciles.</p>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h5>2. Suggestions de régimes et sport</h5>
+                            <p class="mb-0 text-muted">Recevez des propositions de régimes et d'activités sportives adaptées à votre objectif et à la durée souhaitée.</p>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h5>3. Suivi et Exportation</h5>
+                            <p class="mb-0 text-muted">Suivez vos progrès et exportez vos programmes au format PDF pour les garder à portée de main.</p>
+                        </li>
+                        <li class="list-group-item p-4">
+                            <h5>4. Porte-monnaie virtuel</h5>
+                            <p class="mb-0 text-muted">Rechargez facilement votre compte en utilisant des codes prépayés pour acheter vos programmes.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="<?= base_url('assets/images/image1.jpg') ?>" class="img-fluid rounded shadow" alt="Alimentation saine">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 My Régime. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="<?= base_url('assets/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+</body>
+</html>
+
+

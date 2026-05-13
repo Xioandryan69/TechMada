@@ -1,0 +1,1 @@
+sudo mysql -u root -p regimeAlimentaire < base/data.sql

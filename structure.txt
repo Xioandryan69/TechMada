@@ -1,0 +1,1388 @@
+.
+├── base
+│   ├── addcolumn.sql
+│   ├── Base.png
+│   ├── data.sql
+│   ├── dbdiagram.io
+│   ├── reset.sql
+│   ├── schema.sql
+│   └── user.sql
+├── docs
+│   ├── add_file_gitignore
+│   │   └── README.MD
+│   ├── docs.md
+│   ├── Filters
+│   │   └── LESSON.MD
+│   ├── imc
+│   │   └── README.MD
+│   ├── ITU-S4-P18-PROJET.pdf
+│   ├── migrate_tables
+│   │   └── LESSON.MD
+│   └── models_views_controllers
+│       ├── controllers
+│       │   └── LESSON.MD
+│       ├── LESSON.MD
+│       └── models.php
+│           └── LESSON.MD
+├── dump
+│   ├── create_database.sh
+│   ├── initialiseBase.sh
+│   └── resetBase.sh
+├── export_php_content.txt
+├── README.md
+├── send.sh
+├── src
+│   ├── app
+│   │   ├── Common.php
+│   │   ├── Config
+│   │   │   ├── App.php
+│   │   │   ├── Autoload.php
+│   │   │   ├── Boot
+│   │   │   │   ├── development.php
+│   │   │   │   ├── production.php
+│   │   │   │   └── testing.php
+│   │   │   ├── Cache.php
+│   │   │   ├── Constants.php
+│   │   │   ├── ContentSecurityPolicy.php
+│   │   │   ├── Cookie.php
+│   │   │   ├── Cors.php
+│   │   │   ├── CURLRequest.php
+│   │   │   ├── Database.php
+│   │   │   ├── DocTypes.php
+│   │   │   ├── Email.php
+│   │   │   ├── Encryption.php
+│   │   │   ├── Events.php
+│   │   │   ├── Exceptions.php
+│   │   │   ├── Feature.php
+│   │   │   ├── Filters.php
+│   │   │   ├── ForeignCharacters.php
+│   │   │   ├── Format.php
+│   │   │   ├── Generators.php
+│   │   │   ├── Honeypot.php
+│   │   │   ├── Hostnames.php
+│   │   │   ├── Images.php
+│   │   │   ├── Kint.php
+│   │   │   ├── Logger.php
+│   │   │   ├── Migrations.php
+│   │   │   ├── Mimes.php
+│   │   │   ├── Modules.php
+│   │   │   ├── Optimize.php
+│   │   │   ├── Pager.php
+│   │   │   ├── Paths.php
+│   │   │   ├── Publisher.php
+│   │   │   ├── Routes.php
+│   │   │   ├── Routing.php
+│   │   │   ├── Security.php
+│   │   │   ├── Services.php
+│   │   │   ├── Session.php
+│   │   │   ├── Toolbar.php
+│   │   │   ├── UserAgents.php
+│   │   │   ├── Validation.php
+│   │   │   ├── View.php
+│   │   │   └── WorkerMode.php
+│   │   ├── Controllers
+│   │   │   ├── AbonnementController.php
+│   │   │   ├── ActiviteController.php
+│   │   │   ├── AdminActivites.php
+│   │   │   ├── AdminAuth.php
+│   │   │   ├── AdminDashboard.php
+│   │   │   ├── AdminListUsers.php
+│   │   │   ├── AdminRegimes.php
+│   │   │   ├── AgeRangeController.php
+│   │   │   ├── AuthController.php
+│   │   │   ├── BaseController.php
+│   │   │   ├── CodeController.php
+│   │   │   ├── HealthRuleController.php
+│   │   │   ├── Home.php
+│   │   │   ├── ImcCategoryController.php
+│   │   │   ├── ObjectifController.php
+│   │   │   ├── RecommendationController.php
+│   │   │   ├── RegimeController.php
+│   │   │   ├── RegimeUserController.php
+│   │   │   ├── TransactionController.php
+│   │   │   ├── TypeRegimeController.php
+│   │   │   ├── UserController.php
+│   │   │   ├── UserHealthController.php
+│   │   │   ├── UserObjectifController.php
+│   │   │   ├── UsersAuth.php
+│   │   │   ├── UsersHomepage.php
+│   │   │   └── WalletController.php
+│   │   ├── Database
+│   │   │   ├── Migrations
+│   │   │   └── Seeds
+│   │   ├── Filters
+│   │   │   ├── AdminAuthFilter.php
+│   │   │   ├── AuthFilter.php
+│   │   │   └── UsersAuthFilter.php
+│   │   ├── Helpers
+│   │   ├── index.html
+│   │   ├── Language
+│   │   │   └── en
+│   │   │       └── Validation.php
+│   │   ├── Libraries
+│   │   ├── Models
+│   │   │   ├── AbonnementModel.php
+│   │   │   ├── ActiviteModel.php
+│   │   │   ├── AgeRangeModel.php
+│   │   │   ├── CodeModel.php
+│   │   │   ├── HealthRuleModel.php
+│   │   │   ├── ImcCategoryModel.php
+│   │   │   ├── ObjectifModel.php
+│   │   │   ├── RecommendationModel.php
+│   │   │   ├── RecommendationWeightModel.php
+│   │   │   ├── RegimeModel.php
+│   │   │   ├── RegimeUserModel.php
+│   │   │   ├── TransactionModel.php
+│   │   │   ├── TypeRegimeModel.php
+│   │   │   ├── UserHealthModel.php
+│   │   │   ├── UserModel.php
+│   │   │   ├── UserObjectifModel.php
+│   │   │   └── WalletModel.php
+│   │   ├── ThirdParty
+│   │   └── Views
+│   │       ├── admin
+│   │       │   ├── activites
+│   │       │   │   ├── create.php
+│   │       │   │   ├── edit.php
+│   │       │   │   └── index.php
+│   │       │   ├── dashboard.php
+│   │       │   ├── listUsers.php
+│   │       │   ├── login.php
+│   │       │   ├── profilUser.php
+│   │       │   ├── regimes
+│   │       │   │   ├── create.php
+│   │       │   │   ├── edit.php
+│   │       │   │   └── index.php
+│   │       │   └── templates
+│   │       │       └── navbar.php
+│   │       ├── home.php
+│   │       └── users
+│   │           ├── homepage.php
+│   │           ├── imc
+│   │           ├── login.php
+│   │           ├── register.php
+│   │           ├── register_step1.php
+│   │           └── register_step2.php
+│   ├── composer.json
+│   ├── EXEMPLE_CONFIG.php
+│   ├── LICENSE
+│   ├── node_modules
+│   │   ├── chokidar
+│   │   │   ├── esm
+│   │   │   │   ├── handler.d.ts
+│   │   │   │   ├── handler.js
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.js
+│   │   │   │   └── package.json
+│   │   │   ├── handler.d.ts
+│   │   │   ├── handler.js
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── detect-libc
+│   │   │   ├── index.d.ts
+│   │   │   ├── lib
+│   │   │   │   ├── detect-libc.js
+│   │   │   │   ├── elf.js
+│   │   │   │   ├── filesystem.js
+│   │   │   │   └── process.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── immutable
+│   │   │   ├── dist
+│   │   │   │   ├── immutable.d.ts
+│   │   │   │   ├── immutable.es.js
+│   │   │   │   ├── immutable.js
+│   │   │   │   ├── immutable.js.flow
+│   │   │   │   └── immutable.min.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── is-extglob
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── is-glob
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── node-addon-api
+│   │   │   ├── common.gypi
+│   │   │   ├── except.gypi
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE.md
+│   │   │   ├── napi.h
+│   │   │   ├── napi-inl.deprecated.h
+│   │   │   ├── napi-inl.h
+│   │   │   ├── node_addon_api.gyp
+│   │   │   ├── node_api.gyp
+│   │   │   ├── noexcept.gypi
+│   │   │   ├── nothing.c
+│   │   │   ├── package.json
+│   │   │   ├── package-support.json
+│   │   │   ├── README.md
+│   │   │   └── tools
+│   │   │       ├── check-napi.js
+│   │   │       ├── clang-format.js
+│   │   │       ├── conversion.js
+│   │   │       ├── eslint-format.js
+│   │   │       └── README.md
+│   │   ├── @parcel
+│   │   │   ├── watcher
+│   │   │   │   ├── binding.gyp
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.js
+│   │   │   │   ├── index.js.flow
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── package.json
+│   │   │   │   ├── README.md
+│   │   │   │   ├── scripts
+│   │   │   │   │   └── build-from-source.js
+│   │   │   │   ├── src
+│   │   │   │   │   ├── Backend.cc
+│   │   │   │   │   ├── Backend.hh
+│   │   │   │   │   ├── binding.cc
+│   │   │   │   │   ├── Debounce.cc
+│   │   │   │   │   ├── Debounce.hh
+│   │   │   │   │   ├── DirTree.cc
+│   │   │   │   │   ├── DirTree.hh
+│   │   │   │   │   ├── Event.hh
+│   │   │   │   │   ├── Glob.cc
+│   │   │   │   │   ├── Glob.hh
+│   │   │   │   │   ├── kqueue
+│   │   │   │   │   │   ├── KqueueBackend.cc
+│   │   │   │   │   │   └── KqueueBackend.hh
+│   │   │   │   │   ├── linux
+│   │   │   │   │   │   ├── InotifyBackend.cc
+│   │   │   │   │   │   └── InotifyBackend.hh
+│   │   │   │   │   ├── macos
+│   │   │   │   │   │   ├── FSEventsBackend.cc
+│   │   │   │   │   │   └── FSEventsBackend.hh
+│   │   │   │   │   ├── PromiseRunner.hh
+│   │   │   │   │   ├── shared
+│   │   │   │   │   │   ├── BruteForceBackend.cc
+│   │   │   │   │   │   └── BruteForceBackend.hh
+│   │   │   │   │   ├── Signal.hh
+│   │   │   │   │   ├── unix
+│   │   │   │   │   │   ├── fts.cc
+│   │   │   │   │   │   └── legacy.cc
+│   │   │   │   │   ├── wasm
+│   │   │   │   │   │   ├── include.h
+│   │   │   │   │   │   ├── WasmBackend.cc
+│   │   │   │   │   │   └── WasmBackend.hh
+│   │   │   │   │   ├── Watcher.cc
+│   │   │   │   │   ├── Watcher.hh
+│   │   │   │   │   ├── watchman
+│   │   │   │   │   │   ├── BSER.cc
+│   │   │   │   │   │   ├── BSER.hh
+│   │   │   │   │   │   ├── IPC.hh
+│   │   │   │   │   │   ├── WatchmanBackend.cc
+│   │   │   │   │   │   └── WatchmanBackend.hh
+│   │   │   │   │   └── windows
+│   │   │   │   │       ├── WindowsBackend.cc
+│   │   │   │   │       ├── WindowsBackend.hh
+│   │   │   │   │       ├── win_utils.cc
+│   │   │   │   │       └── win_utils.hh
+│   │   │   │   └── wrapper.js
+│   │   │   └── watcher-linux-x64-glibc
+│   │   │       ├── LICENSE
+│   │   │       ├── package.json
+│   │   │       ├── README.md
+│   │   │       └── watcher.node
+│   │   ├── picomatch
+│   │   │   ├── index.js
+│   │   │   ├── lib
+│   │   │   │   ├── constants.js
+│   │   │   │   ├── parse.js
+│   │   │   │   ├── picomatch.js
+│   │   │   │   ├── scan.js
+│   │   │   │   └── utils.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   ├── posix.js
+│   │   │   └── README.md
+│   │   ├── readdirp
+│   │   │   ├── esm
+│   │   │   │   ├── index.d.ts
+│   │   │   │   ├── index.js
+│   │   │   │   └── package.json
+│   │   │   ├── index.d.ts
+│   │   │   ├── index.js
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   └── README.md
+│   │   ├── sass
+│   │   │   ├── LICENSE
+│   │   │   ├── package.json
+│   │   │   ├── README.md
+│   │   │   ├── sass.dart.js
+│   │   │   ├── sass.default.cjs
+│   │   │   ├── sass.default.js
+│   │   │   ├── sass.js
+│   │   │   ├── sass.node.js
+│   │   │   ├── sass.node.mjs
+│   │   │   └── types
+│   │   │       ├── compile.d.ts
+│   │   │       ├── deprecations.d.ts
+│   │   │       ├── exception.d.ts
+│   │   │       ├── importer.d.ts
+│   │   │       ├── index.d.ts
+│   │   │       ├── legacy
+│   │   │       │   ├── exception.d.ts
+│   │   │       │   ├── function.d.ts
+│   │   │       │   ├── importer.d.ts
+│   │   │       │   ├── options.d.ts
+│   │   │       │   ├── plugin_this.d.ts
+│   │   │       │   └── render.d.ts
+│   │   │       ├── logger
+│   │   │       │   ├── index.d.ts
+│   │   │       │   ├── source_location.d.ts
+│   │   │       │   └── source_span.d.ts
+│   │   │       ├── options.d.ts
+│   │   │       ├── util
+│   │   │       │   └── promise_or.d.ts
+│   │   │       └── value
+│   │   │           ├── argument_list.d.ts
+│   │   │           ├── boolean.d.ts
+│   │   │           ├── calculation.d.ts
+│   │   │           ├── color.d.ts
+│   │   │           ├── function.d.ts
+│   │   │           ├── index.d.ts
+│   │   │           ├── list.d.ts
+│   │   │           ├── map.d.ts
+│   │   │           ├── mixin.d.ts
+│   │   │           ├── number.d.ts
+│   │   │           └── string.d.ts
+│   │   └── source-map-js
+│   │       ├── lib
+│   │       │   ├── array-set.js
+│   │       │   ├── base64.js
+│   │       │   ├── base64-vlq.js
+│   │       │   ├── binary-search.js
+│   │       │   ├── mapping-list.js
+│   │       │   ├── quick-sort.js
+│   │       │   ├── source-map-consumer.d.ts
+│   │       │   ├── source-map-consumer.js
+│   │       │   ├── source-map-generator.d.ts
+│   │       │   ├── source-map-generator.js
+│   │       │   ├── source-node.d.ts
+│   │       │   ├── source-node.js
+│   │       │   └── util.js
+│   │       ├── LICENSE
+│   │       ├── package.json
+│   │       ├── README.md
+│   │       ├── source-map.d.ts
+│   │       └── source-map.js
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── phpunit.xml.dist
+│   ├── preload.php
+│   ├── public
+│   │   ├── assets
+│   │   │   ├── bootstrap
+│   │   │   │   ├── css
+│   │   │   │   │   ├── bootstrap.css
+│   │   │   │   │   ├── bootstrap.css.map
+│   │   │   │   │   ├── bootstrap-grid.css
+│   │   │   │   │   ├── bootstrap-grid.css.map
+│   │   │   │   │   ├── bootstrap-grid.min.css
+│   │   │   │   │   ├── bootstrap-grid.min.css.map
+│   │   │   │   │   ├── bootstrap-grid.rtl.css
+│   │   │   │   │   ├── bootstrap-grid.rtl.css.map
+│   │   │   │   │   ├── bootstrap-grid.rtl.min.css
+│   │   │   │   │   ├── bootstrap-grid.rtl.min.css.map
+│   │   │   │   │   ├── bootstrap.min.css
+│   │   │   │   │   ├── bootstrap.min.css.map
+│   │   │   │   │   ├── bootstrap-reboot.css
+│   │   │   │   │   ├── bootstrap-reboot.css.map
+│   │   │   │   │   ├── bootstrap-reboot.min.css
+│   │   │   │   │   ├── bootstrap-reboot.min.css.map
+│   │   │   │   │   ├── bootstrap-reboot.rtl.css
+│   │   │   │   │   ├── bootstrap-reboot.rtl.css.map
+│   │   │   │   │   ├── bootstrap-reboot.rtl.min.css
+│   │   │   │   │   ├── bootstrap-reboot.rtl.min.css.map
+│   │   │   │   │   ├── bootstrap.rtl.css
+│   │   │   │   │   ├── bootstrap.rtl.css.map
+│   │   │   │   │   ├── bootstrap.rtl.min.css
+│   │   │   │   │   ├── bootstrap.rtl.min.css.map
+│   │   │   │   │   ├── bootstrap-utilities.css
+│   │   │   │   │   ├── bootstrap-utilities.css.map
+│   │   │   │   │   ├── bootstrap-utilities.min.css
+│   │   │   │   │   ├── bootstrap-utilities.min.css.map
+│   │   │   │   │   ├── bootstrap-utilities.rtl.css
+│   │   │   │   │   ├── bootstrap-utilities.rtl.css.map
+│   │   │   │   │   ├── bootstrap-utilities.rtl.min.css
+│   │   │   │   │   └── bootstrap-utilities.rtl.min.css.map
+│   │   │   │   └── js
+│   │   │   │       ├── bootstrap.bundle.js
+│   │   │   │       ├── bootstrap.bundle.js.map
+│   │   │   │       ├── bootstrap.bundle.min.js
+│   │   │   │       ├── bootstrap.bundle.min.js.map
+│   │   │   │       ├── bootstrap.esm.js
+│   │   │   │       ├── bootstrap.esm.js.map
+│   │   │   │       ├── bootstrap.esm.min.js
+│   │   │   │       ├── bootstrap.esm.min.js.map
+│   │   │   │       ├── bootstrap.js
+│   │   │   │       ├── bootstrap.js.map
+│   │   │   │       ├── bootstrap.min.js
+│   │   │   │       └── bootstrap.min.js.map
+│   │   │   ├── css
+│   │   │   │   └── style.css
+│   │   │   ├── images
+│   │   │   │   ├── image1.jpg
+│   │   │   │   └── image2.webp
+│   │   │   ├── js
+│   │   │   │   └── chart.min.js
+│   │   │   ├── script.js
+│   │   │   ├── style.css
+│   │   │   └── style.scss
+│   │   ├── css
+│   │   ├── favicon.ico
+│   │   ├── index.php
+│   │   ├── js
+│   │   ├── robots.txt
+│   │   ├── scss
+│   │   └── uploads
+│   │       ├── 1776774613_7c02fd1b059471778d60.webp
+│   │       └── index.html
+│   ├── README.md
+│   ├── spark
+│   ├── system
+│   │   ├── API
+│   │   │   ├── ApiException.php
+│   │   │   ├── BaseTransformer.php
+│   │   │   ├── ResponseTrait.php
+│   │   │   └── TransformerInterface.php
+│   │   ├── Autoloader
+│   │   │   ├── Autoloader.php
+│   │   │   ├── FileLocatorCached.php
+│   │   │   ├── FileLocatorInterface.php
+│   │   │   └── FileLocator.php
+│   │   ├── BaseModel.php
+│   │   ├── Boot.php
+│   │   ├── bootstrap.php
+│   │   ├── Cache
+│   │   │   ├── CacheFactory.php
+│   │   │   ├── CacheInterface.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── CacheException.php
+│   │   │   ├── FactoriesCache
+│   │   │   │   └── FileVarExportHandler.php
+│   │   │   ├── FactoriesCache.php
+│   │   │   ├── Handlers
+│   │   │   │   ├── ApcuHandler.php
+│   │   │   │   ├── BaseHandler.php
+│   │   │   │   ├── DummyHandler.php
+│   │   │   │   ├── FileHandler.php
+│   │   │   │   ├── MemcachedHandler.php
+│   │   │   │   ├── PredisHandler.php
+│   │   │   │   ├── RedisHandler.php
+│   │   │   │   └── WincacheHandler.php
+│   │   │   └── ResponseCache.php
+│   │   ├── CLI
+│   │   │   ├── BaseCommand.php
+│   │   │   ├── CLI.php
+│   │   │   ├── Commands.php
+│   │   │   ├── Console.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── CLIException.php
+│   │   │   ├── GeneratorTrait.php
+│   │   │   ├── InputOutput.php
+│   │   │   └── SignalTrait.php
+│   │   ├── CodeIgniter.php
+│   │   ├── Commands
+│   │   │   ├── Cache
+│   │   │   │   ├── ClearCache.php
+│   │   │   │   └── InfoCache.php
+│   │   │   ├── Database
+│   │   │   │   ├── CreateDatabase.php
+│   │   │   │   ├── Migrate.php
+│   │   │   │   ├── MigrateRefresh.php
+│   │   │   │   ├── MigrateRollback.php
+│   │   │   │   ├── MigrateStatus.php
+│   │   │   │   ├── Seed.php
+│   │   │   │   └── ShowTableInfo.php
+│   │   │   ├── Encryption
+│   │   │   │   └── GenerateKey.php
+│   │   │   ├── Generators
+│   │   │   │   ├── CellGenerator.php
+│   │   │   │   ├── CommandGenerator.php
+│   │   │   │   ├── ConfigGenerator.php
+│   │   │   │   ├── ControllerGenerator.php
+│   │   │   │   ├── EntityGenerator.php
+│   │   │   │   ├── FilterGenerator.php
+│   │   │   │   ├── MigrationGenerator.php
+│   │   │   │   ├── ModelGenerator.php
+│   │   │   │   ├── ScaffoldGenerator.php
+│   │   │   │   ├── SeederGenerator.php
+│   │   │   │   ├── TestGenerator.php
+│   │   │   │   ├── TransformerGenerator.php
+│   │   │   │   ├── ValidationGenerator.php
+│   │   │   │   └── Views
+│   │   │   │       ├── cell.tpl.php
+│   │   │   │       ├── cell_view.tpl.php
+│   │   │   │       ├── command.tpl.php
+│   │   │   │       ├── config.tpl.php
+│   │   │   │       ├── controller.tpl.php
+│   │   │   │       ├── entity.tpl.php
+│   │   │   │       ├── filter.tpl.php
+│   │   │   │       ├── migration.tpl.php
+│   │   │   │       ├── model.tpl.php
+│   │   │   │       ├── seeder.tpl.php
+│   │   │   │       ├── test.tpl.php
+│   │   │   │       ├── transformer.tpl.php
+│   │   │   │       └── validation.tpl.php
+│   │   │   ├── Help.php
+│   │   │   ├── Housekeeping
+│   │   │   │   ├── ClearDebugbar.php
+│   │   │   │   └── ClearLogs.php
+│   │   │   ├── ListCommands.php
+│   │   │   ├── Server
+│   │   │   │   └── Serve.php
+│   │   │   ├── Translation
+│   │   │   │   ├── LocalizationFinder.php
+│   │   │   │   └── LocalizationSync.php
+│   │   │   ├── Utilities
+│   │   │   │   ├── ConfigCheck.php
+│   │   │   │   ├── Environment.php
+│   │   │   │   ├── FilterCheck.php
+│   │   │   │   ├── Namespaces.php
+│   │   │   │   ├── Optimize.php
+│   │   │   │   ├── PhpIniCheck.php
+│   │   │   │   ├── Publish.php
+│   │   │   │   ├── Routes
+│   │   │   │   │   ├── AutoRouteCollector.php
+│   │   │   │   │   ├── AutoRouterImproved
+│   │   │   │   │   │   ├── AutoRouteCollector.php
+│   │   │   │   │   │   └── ControllerMethodReader.php
+│   │   │   │   │   ├── ControllerFinder.php
+│   │   │   │   │   ├── ControllerMethodReader.php
+│   │   │   │   │   ├── FilterCollector.php
+│   │   │   │   │   ├── FilterFinder.php
+│   │   │   │   │   └── SampleURIGenerator.php
+│   │   │   │   └── Routes.php
+│   │   │   └── Worker
+│   │   │       ├── Views
+│   │   │       │   ├── Caddyfile.tpl
+│   │   │       │   └── frankenphp-worker.php.tpl
+│   │   │       ├── WorkerInstall.php
+│   │   │       └── WorkerUninstall.php
+│   │   ├── Common.php
+│   │   ├── ComposerScripts.php
+│   │   ├── Config
+│   │   │   ├── AutoloadConfig.php
+│   │   │   ├── BaseConfig.php
+│   │   │   ├── BaseService.php
+│   │   │   ├── DotEnv.php
+│   │   │   ├── Factories.php
+│   │   │   ├── Factory.php
+│   │   │   ├── Filters.php
+│   │   │   ├── ForeignCharacters.php
+│   │   │   ├── Publisher.php
+│   │   │   ├── Routing.php
+│   │   │   ├── Services.php
+│   │   │   └── View.php
+│   │   ├── Controller.php
+│   │   ├── Cookie
+│   │   │   ├── CloneableCookieInterface.php
+│   │   │   ├── CookieInterface.php
+│   │   │   ├── Cookie.php
+│   │   │   ├── CookieStore.php
+│   │   │   └── Exceptions
+│   │   │       └── CookieException.php
+│   │   ├── Database
+│   │   │   ├── BaseBuilder.php
+│   │   │   ├── BaseConnection.php
+│   │   │   ├── BasePreparedQuery.php
+│   │   │   ├── BaseResult.php
+│   │   │   ├── BaseUtils.php
+│   │   │   ├── Config.php
+│   │   │   ├── ConnectionInterface.php
+│   │   │   ├── Database.php
+│   │   │   ├── Exceptions
+│   │   │   │   ├── DatabaseException.php
+│   │   │   │   ├── DataException.php
+│   │   │   │   └── ExceptionInterface.php
+│   │   │   ├── Forge.php
+│   │   │   ├── Migration.php
+│   │   │   ├── MigrationRunner.php
+│   │   │   ├── MySQLi
+│   │   │   │   ├── Builder.php
+│   │   │   │   ├── Connection.php
+│   │   │   │   ├── Forge.php
+│   │   │   │   ├── PreparedQuery.php
+│   │   │   │   ├── Result.php
+│   │   │   │   └── Utils.php
+│   │   │   ├── OCI8
+│   │   │   │   ├── Builder.php
+│   │   │   │   ├── Connection.php
+│   │   │   │   ├── Forge.php
+│   │   │   │   ├── PreparedQuery.php
+│   │   │   │   ├── Result.php
+│   │   │   │   └── Utils.php
+│   │   │   ├── Postgre
+│   │   │   │   ├── Builder.php
+│   │   │   │   ├── Connection.php
+│   │   │   │   ├── Forge.php
+│   │   │   │   ├── PreparedQuery.php
+│   │   │   │   ├── Result.php
+│   │   │   │   └── Utils.php
+│   │   │   ├── PreparedQueryInterface.php
+│   │   │   ├── QueryInterface.php
+│   │   │   ├── Query.php
+│   │   │   ├── RawSql.php
+│   │   │   ├── ResultInterface.php
+│   │   │   ├── Seeder.php
+│   │   │   ├── SQLite3
+│   │   │   │   ├── Builder.php
+│   │   │   │   ├── Connection.php
+│   │   │   │   ├── Forge.php
+│   │   │   │   ├── PreparedQuery.php
+│   │   │   │   ├── Result.php
+│   │   │   │   ├── Table.php
+│   │   │   │   └── Utils.php
+│   │   │   ├── SQLSRV
+│   │   │   │   ├── Builder.php
+│   │   │   │   ├── Connection.php
+│   │   │   │   ├── Forge.php
+│   │   │   │   ├── PreparedQuery.php
+│   │   │   │   ├── Result.php
+│   │   │   │   └── Utils.php
+│   │   │   └── TableName.php
+│   │   ├── DataCaster
+│   │   │   ├── Cast
+│   │   │   │   ├── ArrayCast.php
+│   │   │   │   ├── BaseCast.php
+│   │   │   │   ├── BooleanCast.php
+│   │   │   │   ├── CastInterface.php
+│   │   │   │   ├── CSVCast.php
+│   │   │   │   ├── DatetimeCast.php
+│   │   │   │   ├── EnumCast.php
+│   │   │   │   ├── FloatCast.php
+│   │   │   │   ├── IntBoolCast.php
+│   │   │   │   ├── IntegerCast.php
+│   │   │   │   ├── JsonCast.php
+│   │   │   │   ├── TimestampCast.php
+│   │   │   │   └── URICast.php
+│   │   │   ├── DataCaster.php
+│   │   │   └── Exceptions
+│   │   │       └── CastException.php
+│   │   ├── DataConverter
+│   │   │   └── DataConverter.php
+│   │   ├── Debug
+│   │   │   ├── BaseExceptionHandler.php
+│   │   │   ├── ExceptionHandlerInterface.php
+│   │   │   ├── ExceptionHandler.php
+│   │   │   ├── Exceptions.php
+│   │   │   ├── Iterator.php
+│   │   │   ├── Timer.php
+│   │   │   ├── Toolbar
+│   │   │   │   ├── Collectors
+│   │   │   │   │   ├── BaseCollector.php
+│   │   │   │   │   ├── Config.php
+│   │   │   │   │   ├── Database.php
+│   │   │   │   │   ├── Events.php
+│   │   │   │   │   ├── Files.php
+│   │   │   │   │   ├── History.php
+│   │   │   │   │   ├── Logs.php
+│   │   │   │   │   ├── Routes.php
+│   │   │   │   │   ├── Timers.php
+│   │   │   │   │   └── Views.php
+│   │   │   │   └── Views
+│   │   │   │       ├── _config.tpl
+│   │   │   │       ├── _database.tpl
+│   │   │   │       ├── _events.tpl
+│   │   │   │       ├── _files.tpl
+│   │   │   │       ├── _history.tpl
+│   │   │   │       ├── _logs.tpl
+│   │   │   │       ├── _routes.tpl
+│   │   │   │       ├── toolbar.css
+│   │   │   │       ├── toolbar.js
+│   │   │   │       ├── toolbarloader.js
+│   │   │   │       ├── toolbarstandalone.js
+│   │   │   │       └── toolbar.tpl.php
+│   │   │   └── Toolbar.php
+│   │   ├── Email
+│   │   │   └── Email.php
+│   │   ├── Encryption
+│   │   │   ├── EncrypterInterface.php
+│   │   │   ├── Encryption.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── EncryptionException.php
+│   │   │   ├── Handlers
+│   │   │   │   ├── BaseHandler.php
+│   │   │   │   ├── OpenSSLHandler.php
+│   │   │   │   └── SodiumHandler.php
+│   │   │   └── KeyRotationDecorator.php
+│   │   ├── Entity
+│   │   │   ├── Cast
+│   │   │   │   ├── ArrayCast.php
+│   │   │   │   ├── BaseCast.php
+│   │   │   │   ├── BooleanCast.php
+│   │   │   │   ├── CastInterface.php
+│   │   │   │   ├── CSVCast.php
+│   │   │   │   ├── DatetimeCast.php
+│   │   │   │   ├── EnumCast.php
+│   │   │   │   ├── FloatCast.php
+│   │   │   │   ├── IntBoolCast.php
+│   │   │   │   ├── IntegerCast.php
+│   │   │   │   ├── JsonCast.php
+│   │   │   │   ├── ObjectCast.php
+│   │   │   │   ├── StringCast.php
+│   │   │   │   ├── TimestampCast.php
+│   │   │   │   └── URICast.php
+│   │   │   ├── Entity.php
+│   │   │   └── Exceptions
+│   │   │       └── CastException.php
+│   │   ├── Events
+│   │   │   └── Events.php
+│   │   ├── Exceptions
+│   │   │   ├── BadFunctionCallException.php
+│   │   │   ├── BadMethodCallException.php
+│   │   │   ├── ConfigException.php
+│   │   │   ├── CriticalError.php
+│   │   │   ├── DebugTraceableTrait.php
+│   │   │   ├── DownloadException.php
+│   │   │   ├── ExceptionInterface.php
+│   │   │   ├── FrameworkException.php
+│   │   │   ├── HasExitCodeInterface.php
+│   │   │   ├── HTTPExceptionInterface.php
+│   │   │   ├── InvalidArgumentException.php
+│   │   │   ├── LogicException.php
+│   │   │   ├── ModelException.php
+│   │   │   ├── PageNotFoundException.php
+│   │   │   ├── RuntimeException.php
+│   │   │   └── TestException.php
+│   │   ├── Files
+│   │   │   ├── Exceptions
+│   │   │   │   ├── ExceptionInterface.php
+│   │   │   │   ├── FileException.php
+│   │   │   │   └── FileNotFoundException.php
+│   │   │   ├── FileCollection.php
+│   │   │   ├── File.php
+│   │   │   └── FileSizeUnit.php
+│   │   ├── Filters
+│   │   │   ├── Cors.php
+│   │   │   ├── CSRF.php
+│   │   │   ├── DebugToolbar.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── FilterException.php
+│   │   │   ├── FilterInterface.php
+│   │   │   ├── Filters.php
+│   │   │   ├── ForceHTTPS.php
+│   │   │   ├── Honeypot.php
+│   │   │   ├── InvalidChars.php
+│   │   │   ├── PageCache.php
+│   │   │   ├── PerformanceMetrics.php
+│   │   │   └── SecureHeaders.php
+│   │   ├── Format
+│   │   │   ├── Exceptions
+│   │   │   │   └── FormatException.php
+│   │   │   ├── Format.php
+│   │   │   ├── FormatterInterface.php
+│   │   │   ├── JSONFormatter.php
+│   │   │   └── XMLFormatter.php
+│   │   ├── Helpers
+│   │   │   ├── Array
+│   │   │   │   └── ArrayHelper.php
+│   │   │   ├── array_helper.php
+│   │   │   ├── cookie_helper.php
+│   │   │   ├── date_helper.php
+│   │   │   ├── filesystem_helper.php
+│   │   │   ├── form_helper.php
+│   │   │   ├── html_helper.php
+│   │   │   ├── inflector_helper.php
+│   │   │   ├── kint_helper.php
+│   │   │   ├── number_helper.php
+│   │   │   ├── security_helper.php
+│   │   │   ├── test_helper.php
+│   │   │   ├── text_helper.php
+│   │   │   ├── url_helper.php
+│   │   │   └── xml_helper.php
+│   │   ├── Honeypot
+│   │   │   ├── Exceptions
+│   │   │   │   └── HoneypotException.php
+│   │   │   └── Honeypot.php
+│   │   ├── HotReloader
+│   │   │   ├── DirectoryHasher.php
+│   │   │   ├── HotReloader.php
+│   │   │   └── IteratorFilter.php
+│   │   ├── HTTP
+│   │   │   ├── CLIRequest.php
+│   │   │   ├── ContentSecurityPolicy.php
+│   │   │   ├── Cors.php
+│   │   │   ├── CURLRequest.php
+│   │   │   ├── DownloadResponse.php
+│   │   │   ├── Exceptions
+│   │   │   │   ├── BadRequestException.php
+│   │   │   │   ├── ExceptionInterface.php
+│   │   │   │   ├── HTTPException.php
+│   │   │   │   └── RedirectException.php
+│   │   │   ├── Files
+│   │   │   │   ├── FileCollection.php
+│   │   │   │   ├── UploadedFileInterface.php
+│   │   │   │   └── UploadedFile.php
+│   │   │   ├── Header.php
+│   │   │   ├── IncomingRequest.php
+│   │   │   ├── MessageInterface.php
+│   │   │   ├── Message.php
+│   │   │   ├── MessageTrait.php
+│   │   │   ├── Method.php
+│   │   │   ├── Negotiate.php
+│   │   │   ├── OutgoingRequestInterface.php
+│   │   │   ├── OutgoingRequest.php
+│   │   │   ├── RedirectResponse.php
+│   │   │   ├── RequestInterface.php
+│   │   │   ├── Request.php
+│   │   │   ├── RequestTrait.php
+│   │   │   ├── ResponsableInterface.php
+│   │   │   ├── ResponseInterface.php
+│   │   │   ├── Response.php
+│   │   │   ├── ResponseTrait.php
+│   │   │   ├── SiteURIFactory.php
+│   │   │   ├── SiteURI.php
+│   │   │   ├── URI.php
+│   │   │   └── UserAgent.php
+│   │   ├── I18n
+│   │   │   ├── Exceptions
+│   │   │   │   └── I18nException.php
+│   │   │   ├── TimeDifference.php
+│   │   │   ├── TimeLegacy.php
+│   │   │   ├── Time.php
+│   │   │   └── TimeTrait.php
+│   │   ├── Images
+│   │   │   ├── Exceptions
+│   │   │   │   └── ImageException.php
+│   │   │   ├── Handlers
+│   │   │   │   ├── BaseHandler.php
+│   │   │   │   ├── GDHandler.php
+│   │   │   │   └── ImageMagickHandler.php
+│   │   │   ├── ImageHandlerInterface.php
+│   │   │   └── Image.php
+│   │   ├── index.html
+│   │   ├── Language
+│   │   │   ├── en
+│   │   │   │   ├── Api.php
+│   │   │   │   ├── Cache.php
+│   │   │   │   ├── Cast.php
+│   │   │   │   ├── CLI.php
+│   │   │   │   ├── Cookie.php
+│   │   │   │   ├── Core.php
+│   │   │   │   ├── Database.php
+│   │   │   │   ├── Email.php
+│   │   │   │   ├── Encryption.php
+│   │   │   │   ├── Errors.php
+│   │   │   │   ├── Fabricator.php
+│   │   │   │   ├── Files.php
+│   │   │   │   ├── Filters.php
+│   │   │   │   ├── Format.php
+│   │   │   │   ├── Honeypot.php
+│   │   │   │   ├── HTTP.php
+│   │   │   │   ├── Images.php
+│   │   │   │   ├── Language.php
+│   │   │   │   ├── Log.php
+│   │   │   │   ├── Migrations.php
+│   │   │   │   ├── Number.php
+│   │   │   │   ├── Pager.php
+│   │   │   │   ├── Publisher.php
+│   │   │   │   ├── RESTful.php
+│   │   │   │   ├── Router.php
+│   │   │   │   ├── Security.php
+│   │   │   │   ├── Session.php
+│   │   │   │   ├── Test.php
+│   │   │   │   ├── Time.php
+│   │   │   │   ├── Validation.php
+│   │   │   │   └── View.php
+│   │   │   └── Language.php
+│   │   ├── Log
+│   │   │   ├── Exceptions
+│   │   │   │   └── LogException.php
+│   │   │   ├── Handlers
+│   │   │   │   ├── BaseHandler.php
+│   │   │   │   ├── ChromeLoggerHandler.php
+│   │   │   │   ├── ErrorlogHandler.php
+│   │   │   │   ├── FileHandler.php
+│   │   │   │   └── HandlerInterface.php
+│   │   │   └── Logger.php
+│   │   ├── Model.php
+│   │   ├── Modules
+│   │   │   └── Modules.php
+│   │   ├── Pager
+│   │   │   ├── Exceptions
+│   │   │   │   └── PagerException.php
+│   │   │   ├── PagerInterface.php
+│   │   │   ├── Pager.php
+│   │   │   ├── PagerRenderer.php
+│   │   │   └── Views
+│   │   │       ├── default_full.php
+│   │   │       ├── default_head.php
+│   │   │       └── default_simple.php
+│   │   ├── Publisher
+│   │   │   ├── ContentReplacer.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── PublisherException.php
+│   │   │   └── Publisher.php
+│   │   ├── RESTful
+│   │   │   ├── BaseResource.php
+│   │   │   ├── ResourceController.php
+│   │   │   └── ResourcePresenter.php
+│   │   ├── rewrite.php
+│   │   ├── Router
+│   │   │   ├── Attributes
+│   │   │   │   ├── Cache.php
+│   │   │   │   ├── Filter.php
+│   │   │   │   ├── Restrict.php
+│   │   │   │   └── RouteAttributeInterface.php
+│   │   │   ├── AutoRouterImproved.php
+│   │   │   ├── AutoRouterInterface.php
+│   │   │   ├── AutoRouter.php
+│   │   │   ├── DefinedRouteCollector.php
+│   │   │   ├── Exceptions
+│   │   │   │   ├── ExceptionInterface.php
+│   │   │   │   ├── MethodNotFoundException.php
+│   │   │   │   └── RouterException.php
+│   │   │   ├── RouteCollectionInterface.php
+│   │   │   ├── RouteCollection.php
+│   │   │   ├── RouterInterface.php
+│   │   │   └── Router.php
+│   │   ├── Security
+│   │   │   ├── CheckPhpIni.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── SecurityException.php
+│   │   │   ├── SecurityInterface.php
+│   │   │   └── Security.php
+│   │   ├── Session
+│   │   │   ├── Exceptions
+│   │   │   │   └── SessionException.php
+│   │   │   ├── Handlers
+│   │   │   │   ├── ArrayHandler.php
+│   │   │   │   ├── BaseHandler.php
+│   │   │   │   ├── Database
+│   │   │   │   │   ├── MySQLiHandler.php
+│   │   │   │   │   └── PostgreHandler.php
+│   │   │   │   ├── DatabaseHandler.php
+│   │   │   │   ├── FileHandler.php
+│   │   │   │   ├── MemcachedHandler.php
+│   │   │   │   └── RedisHandler.php
+│   │   │   ├── PersistsConnection.php
+│   │   │   ├── SessionInterface.php
+│   │   │   └── Session.php
+│   │   ├── Superglobals.php
+│   │   ├── Test
+│   │   │   ├── bootstrap.php
+│   │   │   ├── CIUnitTestCase.php
+│   │   │   ├── ConfigFromArrayTrait.php
+│   │   │   ├── Constraints
+│   │   │   │   └── SeeInDatabase.php
+│   │   │   ├── ControllerTestTrait.php
+│   │   │   ├── DatabaseTestTrait.php
+│   │   │   ├── DOMParser.php
+│   │   │   ├── Fabricator.php
+│   │   │   ├── FeatureTestTrait.php
+│   │   │   ├── Filters
+│   │   │   │   └── CITestStreamFilter.php
+│   │   │   ├── FilterTestTrait.php
+│   │   │   ├── IniTestTrait.php
+│   │   │   ├── Interfaces
+│   │   │   │   └── FabricatorModel.php
+│   │   │   ├── Mock
+│   │   │   │   ├── MockAppConfig.php
+│   │   │   │   ├── MockAutoload.php
+│   │   │   │   ├── MockBuilder.php
+│   │   │   │   ├── MockCache.php
+│   │   │   │   ├── MockCLIConfig.php
+│   │   │   │   ├── MockCodeIgniter.php
+│   │   │   │   ├── MockCommon.php
+│   │   │   │   ├── MockConnection.php
+│   │   │   │   ├── MockCURLRequest.php
+│   │   │   │   ├── MockEmail.php
+│   │   │   │   ├── MockEvents.php
+│   │   │   │   ├── MockFileLogger.php
+│   │   │   │   ├── MockIncomingRequest.php
+│   │   │   │   ├── MockInputOutput.php
+│   │   │   │   ├── MockLanguage.php
+│   │   │   │   ├── MockLogger.php
+│   │   │   │   ├── MockQuery.php
+│   │   │   │   ├── MockResourceController.php
+│   │   │   │   ├── MockResourcePresenter.php
+│   │   │   │   ├── MockResponse.php
+│   │   │   │   ├── MockResult.php
+│   │   │   │   ├── MockSecurity.php
+│   │   │   │   ├── MockServices.php
+│   │   │   │   ├── MockSession.php
+│   │   │   │   └── MockTable.php
+│   │   │   ├── PhpStreamWrapper.php
+│   │   │   ├── ReflectionHelper.php
+│   │   │   ├── StreamFilterTrait.php
+│   │   │   ├── TestLogger.php
+│   │   │   ├── TestResponse.php
+│   │   │   └── Utilities
+│   │   │       └── NativeHeadersStack.php
+│   │   ├── ThirdParty
+│   │   │   ├── Escaper
+│   │   │   │   ├── EscaperInterface.php
+│   │   │   │   ├── Escaper.php
+│   │   │   │   └── Exception
+│   │   │   │       ├── ExceptionInterface.php
+│   │   │   │       ├── InvalidArgumentException.php
+│   │   │   │       └── RuntimeException.php
+│   │   │   ├── Kint
+│   │   │   │   ├── CallFinder.php
+│   │   │   │   ├── FacadeInterface.php
+│   │   │   │   ├── init_helpers.php
+│   │   │   │   ├── init.php
+│   │   │   │   ├── Kint.php
+│   │   │   │   ├── LICENSE
+│   │   │   │   ├── Parser
+│   │   │   │   │   ├── AbstractPlugin.php
+│   │   │   │   │   ├── ArrayLimitPlugin.php
+│   │   │   │   │   ├── ArrayObjectPlugin.php
+│   │   │   │   │   ├── Base64Plugin.php
+│   │   │   │   │   ├── BinaryPlugin.php
+│   │   │   │   │   ├── BlacklistPlugin.php
+│   │   │   │   │   ├── ClassHooksPlugin.php
+│   │   │   │   │   ├── ClassMethodsPlugin.php
+│   │   │   │   │   ├── ClassStaticsPlugin.php
+│   │   │   │   │   ├── ClassStringsPlugin.php
+│   │   │   │   │   ├── ClosurePlugin.php
+│   │   │   │   │   ├── ColorPlugin.php
+│   │   │   │   │   ├── ConstructablePluginInterface.php
+│   │   │   │   │   ├── DateTimePlugin.php
+│   │   │   │   │   ├── DomPlugin.php
+│   │   │   │   │   ├── EnumPlugin.php
+│   │   │   │   │   ├── FsPathPlugin.php
+│   │   │   │   │   ├── HtmlPlugin.php
+│   │   │   │   │   ├── IteratorPlugin.php
+│   │   │   │   │   ├── JsonPlugin.php
+│   │   │   │   │   ├── MicrotimePlugin.php
+│   │   │   │   │   ├── MysqliPlugin.php
+│   │   │   │   │   ├── Parser.php
+│   │   │   │   │   ├── PluginBeginInterface.php
+│   │   │   │   │   ├── PluginCompleteInterface.php
+│   │   │   │   │   ├── PluginInterface.php
+│   │   │   │   │   ├── ProfilePlugin.php
+│   │   │   │   │   ├── ProxyPlugin.php
+│   │   │   │   │   ├── SerializePlugin.php
+│   │   │   │   │   ├── SimpleXMLElementPlugin.php
+│   │   │   │   │   ├── SplFileInfoPlugin.php
+│   │   │   │   │   ├── StreamPlugin.php
+│   │   │   │   │   ├── TablePlugin.php
+│   │   │   │   │   ├── ThrowablePlugin.php
+│   │   │   │   │   ├── TimestampPlugin.php
+│   │   │   │   │   ├── ToStringPlugin.php
+│   │   │   │   │   ├── TracePlugin.php
+│   │   │   │   │   └── XmlPlugin.php
+│   │   │   │   ├── Renderer
+│   │   │   │   │   ├── AbstractRenderer.php
+│   │   │   │   │   ├── AssetRendererTrait.php
+│   │   │   │   │   ├── CliRenderer.php
+│   │   │   │   │   ├── ConstructableRendererInterface.php
+│   │   │   │   │   ├── PlainRenderer.php
+│   │   │   │   │   ├── RendererInterface.php
+│   │   │   │   │   ├── Rich
+│   │   │   │   │   │   ├── AbstractPlugin.php
+│   │   │   │   │   │   ├── BinaryPlugin.php
+│   │   │   │   │   │   ├── CallableDefinitionPlugin.php
+│   │   │   │   │   │   ├── CallablePlugin.php
+│   │   │   │   │   │   ├── ColorPlugin.php
+│   │   │   │   │   │   ├── LockPlugin.php
+│   │   │   │   │   │   ├── MicrotimePlugin.php
+│   │   │   │   │   │   ├── PluginInterface.php
+│   │   │   │   │   │   ├── ProfilePlugin.php
+│   │   │   │   │   │   ├── SourcePlugin.php
+│   │   │   │   │   │   ├── TablePlugin.php
+│   │   │   │   │   │   ├── TabPluginInterface.php
+│   │   │   │   │   │   ├── TraceFramePlugin.php
+│   │   │   │   │   │   └── ValuePluginInterface.php
+│   │   │   │   │   ├── RichRenderer.php
+│   │   │   │   │   ├── Text
+│   │   │   │   │   │   ├── AbstractPlugin.php
+│   │   │   │   │   │   ├── LockPlugin.php
+│   │   │   │   │   │   ├── MicrotimePlugin.php
+│   │   │   │   │   │   ├── PluginInterface.php
+│   │   │   │   │   │   ├── SplFileInfoPlugin.php
+│   │   │   │   │   │   └── TracePlugin.php
+│   │   │   │   │   └── TextRenderer.php
+│   │   │   │   ├── resources
+│   │   │   │   │   └── compiled
+│   │   │   │   │       ├── aante-dark.css
+│   │   │   │   │       ├── aante-light.css
+│   │   │   │   │       ├── main.js
+│   │   │   │   │       ├── original.css
+│   │   │   │   │       ├── plain.css
+│   │   │   │   │       ├── solarized.css
+│   │   │   │   │       └── solarized-dark.css
+│   │   │   │   ├── Utils.php
+│   │   │   │   └── Value
+│   │   │   │       ├── AbstractValue.php
+│   │   │   │       ├── ArrayValue.php
+│   │   │   │       ├── ClosedResourceValue.php
+│   │   │   │       ├── ClosureValue.php
+│   │   │   │       ├── ColorValue.php
+│   │   │   │       ├── Context
+│   │   │   │       │   ├── ArrayContext.php
+│   │   │   │       │   ├── BaseContext.php
+│   │   │   │       │   ├── ClassConstContext.php
+│   │   │   │       │   ├── ClassDeclaredContext.php
+│   │   │   │       │   ├── ClassOwnedContext.php
+│   │   │   │       │   ├── ContextInterface.php
+│   │   │   │       │   ├── DoubleAccessMemberContext.php
+│   │   │   │       │   ├── MethodContext.php
+│   │   │   │       │   ├── PropertyContext.php
+│   │   │   │       │   └── StaticPropertyContext.php
+│   │   │   │       ├── DateTimeValue.php
+│   │   │   │       ├── DeclaredCallableBag.php
+│   │   │   │       ├── DomNodeListValue.php
+│   │   │   │       ├── DomNodeValue.php
+│   │   │   │       ├── EnumValue.php
+│   │   │   │       ├── FixedWidthValue.php
+│   │   │   │       ├── FunctionValue.php
+│   │   │   │       ├── InstanceValue.php
+│   │   │   │       ├── MethodValue.php
+│   │   │   │       ├── MicrotimeValue.php
+│   │   │   │       ├── ParameterBag.php
+│   │   │   │       ├── ParameterHoldingTrait.php
+│   │   │   │       ├── Representation
+│   │   │   │       │   ├── AbstractRepresentation.php
+│   │   │   │       │   ├── BinaryRepresentation.php
+│   │   │   │       │   ├── CallableDefinitionRepresentation.php
+│   │   │   │       │   ├── ColorRepresentation.php
+│   │   │   │       │   ├── ContainerRepresentation.php
+│   │   │   │       │   ├── MicrotimeRepresentation.php
+│   │   │   │       │   ├── ProfileRepresentation.php
+│   │   │   │       │   ├── RepresentationInterface.php
+│   │   │   │       │   ├── SourceRepresentation.php
+│   │   │   │       │   ├── SplFileInfoRepresentation.php
+│   │   │   │       │   ├── StringRepresentation.php
+│   │   │   │       │   ├── TableRepresentation.php
+│   │   │   │       │   └── ValueRepresentation.php
+│   │   │   │       ├── ResourceValue.php
+│   │   │   │       ├── SimpleXMLElementValue.php
+│   │   │   │       ├── SplFileInfoValue.php
+│   │   │   │       ├── StreamValue.php
+│   │   │   │       ├── StringValue.php
+│   │   │   │       ├── ThrowableValue.php
+│   │   │   │       ├── TraceFrameValue.php
+│   │   │   │       ├── TraceValue.php
+│   │   │   │       ├── UninitializedValue.php
+│   │   │   │       ├── UnknownValue.php
+│   │   │   │       └── VirtualValue.php
+│   │   │   └── PSR
+│   │   │       └── Log
+│   │   │           ├── AbstractLogger.php
+│   │   │           ├── InvalidArgumentException.php
+│   │   │           ├── LICENSE
+│   │   │           ├── LoggerAwareInterface.php
+│   │   │           ├── LoggerAwareTrait.php
+│   │   │           ├── LoggerInterface.php
+│   │   │           ├── LoggerTrait.php
+│   │   │           ├── LogLevel.php
+│   │   │           └── NullLogger.php
+│   │   ├── Throttle
+│   │   │   ├── ThrottlerInterface.php
+│   │   │   └── Throttler.php
+│   │   ├── Traits
+│   │   │   ├── ConditionalTrait.php
+│   │   │   └── PropertiesTrait.php
+│   │   ├── Typography
+│   │   │   └── Typography.php
+│   │   ├── util_bootstrap.php
+│   │   ├── Validation
+│   │   │   ├── CreditCardRules.php
+│   │   │   ├── DotArrayFilter.php
+│   │   │   ├── Exceptions
+│   │   │   │   └── ValidationException.php
+│   │   │   ├── FileRules.php
+│   │   │   ├── FormatRules.php
+│   │   │   ├── Rules.php
+│   │   │   ├── StrictRules
+│   │   │   │   ├── CreditCardRules.php
+│   │   │   │   ├── FileRules.php
+│   │   │   │   ├── FormatRules.php
+│   │   │   │   └── Rules.php
+│   │   │   ├── ValidationInterface.php
+│   │   │   ├── Validation.php
+│   │   │   └── Views
+│   │   │       ├── list.php
+│   │   │       └── single.php
+│   │   └── View
+│   │       ├── Cell.php
+│   │       ├── Cells
+│   │       │   └── Cell.php
+│   │       ├── Exceptions
+│   │       │   └── ViewException.php
+│   │       ├── Filters.php
+│   │       ├── Parser.php
+│   │       ├── Plugins.php
+│   │       ├── RendererInterface.php
+│   │       ├── Table.php
+│   │       ├── ViewDecoratorInterface.php
+│   │       ├── ViewDecoratorTrait.php
+│   │       └── View.php
+│   ├── tests
+│   │   ├── database
+│   │   │   └── ExampleDatabaseTest.php
+│   │   ├── index.html
+│   │   ├── session
+│   │   │   └── ExampleSessionTest.php
+│   │   ├── _support
+│   │   │   ├── Database
+│   │   │   │   ├── Migrations
+│   │   │   │   │   └── 2020-02-22-222222_example_migration.php
+│   │   │   │   └── Seeds
+│   │   │   │       └── ExampleSeeder.php
+│   │   │   ├── Libraries
+│   │   │   │   └── ConfigReader.php
+│   │   │   └── Models
+│   │   │       └── ExampleModel.php
+│   │   └── unit
+│   │       └── HealthTest.php
+│   └── writable
+│       ├── cache
+│       │   └── index.html
+│       ├── debugbar
+│       │   ├── debugbar_1778356590.960814.json
+│       │   ├── debugbar_1778357005.706822.json
+│       │   ├── debugbar_1778357008.071089.json
+│       │   ├── debugbar_1778357009.912047.json
+│       │   ├── debugbar_1778357048.621877.json
+│       │   ├── debugbar_1778357050.889420.json
+│       │   ├── debugbar_1778357052.899169.json
+│       │   ├── debugbar_1778357054.819978.json
+│       │   ├── debugbar_1778363824.986829.json
+│       │   ├── debugbar_1778363826.956181.json
+│       │   ├── debugbar_1778364011.067795.json
+│       │   ├── debugbar_1778364013.048339.json
+│       │   ├── debugbar_1778364212.026841.json
+│       │   ├── debugbar_1778364218.200853.json
+│       │   ├── debugbar_1778364220.273227.json
+│       │   ├── debugbar_1778364222.625621.json
+│       │   ├── debugbar_1778364225.005358.json
+│       │   ├── debugbar_1778364760.431195.json
+│       │   ├── debugbar_1778364764.162197.json
+│       │   ├── debugbar_1778364767.680988.json
+│       │   ├── debugbar_1778364769.170727.json
+│       │   ├── debugbar_1778364839.047966.json
+│       │   ├── debugbar_1778364841.871692.json
+│       │   ├── debugbar_1778364846.277011.json
+│       │   ├── debugbar_1778365315.270453.json
+│       │   ├── debugbar_1778365317.877098.json
+│       │   ├── debugbar_1778365348.629483.json
+│       │   ├── debugbar_1778365348.777500.json
+│       │   └── index.html
+│       ├── index.html
+│       ├── logs
+│       │   ├── index.html
+│       │   ├── log-2026-04-20.log
+│       │   ├── log-2026-04-21.log
+│       │   ├── log-2026-04-24.log
+│       │   ├── log-2026-04-29.log
+│       │   ├── log-2026-05-07.log
+│       │   ├── log-2026-05-08.log
+│       │   ├── log-2026-05-09.log
+│       │   └── log-2026-05-10.log
+│       ├── session
+│       │   ├── ci_session007b3856364c25cbc61068efdff1fa5f
+│       │   ├── ci_session050f37ecb5502b3b6ba757c1eee27767
+│       │   ├── ci_session05afc790003eb0a9d99f14e575a70731
+│       │   ├── ci_session0ac277ce9abaa6451e32786ceebb6ec8
+│       │   ├── ci_session0bb43ddf337ae56ad321a6da1422ce72
+│       │   ├── ci_session13fbb4aa2b6e9dbb6cf4646ffa0c6154
+│       │   ├── ci_session14c404b2be43cdc574d1076d2fb7c15d
+│       │   ├── ci_session2383be356720271eed11ea52ff36df6c
+│       │   ├── ci_session262f8cca6cf8aac4801b6e87459f6ddc
+│       │   ├── ci_session2b3087a1c3c16973cf0701880d01ec37
+│       │   ├── ci_session2ebca4f04ea48a27f956b80fefc507da
+│       │   ├── ci_session2f0fe252e017e445f752b43fc4cadc03
+│       │   ├── ci_session2fbc566b99fcd029f274ac8d0d9a7bf1
+│       │   ├── ci_session3116076a3cca1058ed1517abc0f84426
+│       │   ├── ci_session316354afaaf946a7a8b5ded232283268
+│       │   ├── ci_session329a2d3847af27d38901d838eb314b41
+│       │   ├── ci_session34f5ab7e2f359507e97a19cd3f9576e0
+│       │   ├── ci_session3798b7ffa1de0ba81dde2650e6823a94
+│       │   ├── ci_session3dcca68a4ba8610a96eae7073cef8772
+│       │   ├── ci_session4131c190ed95ad4e42ced33b361a3e36
+│       │   ├── ci_session44e54e5db821a0edf51261d158cf24b2
+│       │   ├── ci_session45c16b5b4217749ecbc42ea44c94e30b
+│       │   ├── ci_session491ddb7abddf88336e99f3dbe69b5f71
+│       │   ├── ci_session4be0dc781823d13fa10cf1347456e71a
+│       │   ├── ci_session4c1423ffb6fda90f04d962565b9cffcd
+│       │   ├── ci_session4d70895006368fd28c386c0b5c9ce19b
+│       │   ├── ci_session4fb774d2b782c51c3cf7b76770dec35c
+│       │   ├── ci_session5857bd95cf809248f89acf2163df07e2
+│       │   ├── ci_session58eb2d126cb6b2d1f03f8df19a2d9837
+│       │   ├── ci_session5926bd3a48a002896ad76412d6bdec8b
+│       │   ├── ci_session5b250f89ed41a8c468d0f37ed9349f03
+│       │   ├── ci_session5b618e008e5542c490d1c59359f47bd6
+│       │   ├── ci_session5dbcc02f07fe9ea7981d0598dd17312e
+│       │   ├── ci_session5fcd1c5b900f7517d6598edf9075f067
+│       │   ├── ci_session606f1f4683dfb9d678c4335a004dfaf0
+│       │   ├── ci_session61b51f36d38042b37821d43cce2d441b
+│       │   ├── ci_session65edf300e772e3090d5782c67c753daa
+│       │   ├── ci_session6646bbf5d441b386416a0014c80fef21
+│       │   ├── ci_session6f3756d8db1091d6a74896254a3d0fd0
+│       │   ├── ci_session757eb8c46d8aee9feaa3e8f323b2c3c4
+│       │   ├── ci_session75856f226671241c2eb2de326e613793
+│       │   ├── ci_session79a2f257dc5995e03b352cc9edac31b8
+│       │   ├── ci_session80f8169886e0b0222e962ddd22b40598
+│       │   ├── ci_session81e0ebae46dcaef8ecbd486c30cbe8e4
+│       │   ├── ci_session81effe2c97cb3680e62ec79693cd34e0
+│       │   ├── ci_session82f4193f6aa0fc30315aaf8cff21741a
+│       │   ├── ci_session85ede1fd4576a1bcade1470d89d6bc59
+│       │   ├── ci_session8692ab08a88fb520b3a54883842102ba
+│       │   ├── ci_session89199164540852c21941774bb51a8770
+│       │   ├── ci_session8ec4fabc7ffe5b0a2fe7d13221ccec71
+│       │   ├── ci_session8ed040c9d33f78706e7fb369e60b3cc1
+│       │   ├── ci_session99d36bbeff09349fb68723a5aff50c75
+│       │   ├── ci_session9d116072b50905a73f5e36e467b80e8d
+│       │   ├── ci_sessiona37bca79d94cff6888385040cd7173d9
+│       │   ├── ci_sessiona3df514ef41735c0910ee28a4dedb265
+│       │   ├── ci_sessiona3eb37adbe22027d33b3203995a589b2
+│       │   ├── ci_sessiona6100688aa59af3c37e522ea6854c207
+│       │   ├── ci_sessiona7b8c8fae399c43cba9c69617cb0b41e
+│       │   ├── ci_sessiona7e288d87fca098f6150f8bb16a9d6b2
+│       │   ├── ci_sessiona81bbf1f092f2e5b755a946c8fadbc31
+│       │   ├── ci_sessionab1cb9b7ad702de96fdbd9ec88a11f2b
+│       │   ├── ci_sessionaf7e45a099c988947b5fa6bfc2ee9f62
+│       │   ├── ci_sessionb4d2b65c5d9d252683eb3d09907c2ff7
+│       │   ├── ci_sessionb6b21a5228673b2cf496880480727f73
+│       │   ├── ci_sessionb6f77ba738256d4b4bf586dc0ae703c1
+│       │   ├── ci_sessionb785e57b84157e42d504f978fccaf041
+│       │   ├── ci_sessionba00de3fee922122bb2c039aa1be52b6
+│       │   ├── ci_sessionbafdd2f6ca4ffb3b102394117664eb77
+│       │   ├── ci_sessionbb067759e80c04e30ede7361fcf47928
+│       │   ├── ci_sessionbd88f0f3def5e81adbd69b99a48cb846
+│       │   ├── ci_sessionc1924b0fc76df52839aaf24824570efd
+│       │   ├── ci_sessionc21e943fa30ddcd865a86f4152d3a993
+│       │   ├── ci_sessionc4f496986e398f7c6636102ec8f04571
+│       │   ├── ci_sessionccc4df3000ce43c32cd8cae88ac92d10
+│       │   ├── ci_sessioncd071e715334868c2f9628f86c555b0d
+│       │   ├── ci_sessioncd180132906e84eb86bdb5807ba97cc6
+│       │   ├── ci_sessionce0fd2514edeada6d8ccce0dc280028d
+│       │   ├── ci_sessiond1d8e2b039d8b247bdddad9633499ed1
+│       │   ├── ci_sessiond2338609e2ae35de5f084139856ed3fa
+│       │   ├── ci_sessiond2a5f618d059367c000d3faf27c29d95
+│       │   ├── ci_sessiond5bc749187e2b6ec461b7c0dbb05a561
+│       │   ├── ci_sessiond9b70934959dc0ebf5ec304739acc1b1
+│       │   ├── ci_sessiondc2aa235c1495cedeaf63eebd2f213c7
+│       │   ├── ci_sessione1a74951eaed4f8bd9d4abba0438bf63
+│       │   ├── ci_sessione4070871114e89609ec2a6815f05f6c6
+│       │   ├── ci_sessione7172e9ccd417e33f1fd27664916c1b2
+│       │   ├── ci_sessionec410749de9df86df4e7ff171e6b257f
+│       │   ├── ci_sessionedb2519809d448524f48a700ada79617
+│       │   ├── ci_sessioneee89723cdd8e78479d3d4112ac39887
+│       │   ├── ci_sessionf13490910099ff18640f224fabd533fe
+│       │   ├── ci_sessionf583a136485629878053adf19313922e
+│       │   ├── ci_sessionf6ed096dde145b59a2c3f3671e757afd
+│       │   ├── ci_sessionfd2610fc7220dc734a5cb14d57240b36
+│       │   └── index.html
+│       └── uploads
+│           └── index.html
+└── structure.txt
+
+218 directories, 1168 files

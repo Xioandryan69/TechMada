@@ -1,0 +1,12 @@
+{
+  "name": "template-si-ui",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "scss:build": "sass public/scss:public/css --no-source-map",
+    "scss:watch": "sass --watch public/scss:public/css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.8"
+  }
+}

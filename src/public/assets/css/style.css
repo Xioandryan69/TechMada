@@ -1,0 +1,15 @@
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/image2.webp') center/cover;
+    color: white;
+    padding: 100px 0;
+}
+.feature-icon {
+    font-size: 2.5rem;
+    color: #198754;
+    margin-bottom: 20px;
+}
+.gold-card {
+    background: linear-gradient(135deg, #FFD700 0%, #FDB931 100%);
+    color: #000;
+    border: none;
+}
